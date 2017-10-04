@@ -29,4 +29,10 @@ public class MouseLook : MonoBehaviour {
     public void camRecoil(float recoil) {
         transform.Rotate(-recoil, 0, 0);
     }
+
+    void OnDisable() {
+        if (mouseHideOnStart == true) {
+            Cursor.visible = true;
+        }
+    }
 }
