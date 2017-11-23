@@ -13,7 +13,7 @@ public class Player : NetworkBehaviour {
     private bool[] wasEnabled;
 
     [SyncVar]
-    private int currentHealth;
+    public int currentHealth;
 
     [SyncVar]
     private bool isDeadSync = false;
@@ -46,6 +46,7 @@ public class Player : NetworkBehaviour {
     public void RpcDamage(int amount)
     {
         if (isDeadSync) return;
+        if (isServer) return;
 
         currentHealth -= amount;
 
@@ -93,7 +94,10 @@ public class Player : NetworkBehaviour {
     {
         isDead = false;
 
-        currentHealth = maxHealth;
+        if (isLocalPlayer)
+        {
+            currentHealth = maxHealth;
+        }
 
         for (int i = 0; i < disableComponents.Length; i++) {
             disableComponents[i].enabled = wasEnabled[i];
