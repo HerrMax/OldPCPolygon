@@ -1502,6 +1502,7 @@ MonoBehaviour:
   - {fileID: 114123283864922564}
   - {fileID: 114722439032088020}
   - {fileID: 114866916607024734}
+  - {fileID: 114866916607024734}
   currentHealth: 0
 --- !u!114 &114296337841150396
 MonoBehaviour:

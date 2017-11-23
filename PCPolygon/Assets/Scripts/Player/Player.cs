@@ -62,10 +62,14 @@ public class Player : NetworkBehaviour {
     {
         isDead = true;
 
+        Debug.Log("Die1");
+
         for (int i = 0; i < disableComponents.Length; i++)
         {
             disableComponents[i].enabled = false;
         }
+
+        Debug.Log("Die2");
 
         Collider playerCol = GetComponent<Collider>();
         if (playerCol != null)
