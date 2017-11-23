@@ -26,10 +26,6 @@ public class MouseLook : MonoBehaviour {
         transform.localEulerAngles = new Vector3(-rotY, 0, 0);
     }
 
-    public void camRecoil(float recoil) {
-        transform.Rotate(-recoil, 0, 0);
-    }
-
     void OnDisable() {
         if (mouseHideOnStart == true) {
             Cursor.visible = true;

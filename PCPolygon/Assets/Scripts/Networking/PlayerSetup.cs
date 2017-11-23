@@ -19,6 +19,7 @@ public class PlayerSetup : NetworkBehaviour {
     GameObject playerGraphics;
 
     Camera mainCamera;
+    public GameObject playerUsernameBar;
 
     void Start() {
         if (!isLocalPlayer) {
@@ -57,6 +58,8 @@ public class PlayerSetup : NetworkBehaviour {
         }
 
         SetLayerRecursively(playerGraphics, LayerMask.NameToLayer(noDrawLayer));
+
+        playerUsernameBar.SetActive(false);
 
         GetComponent<Player>().Setup();
     }
