@@ -223,12 +223,8 @@ GameObject:
   - component: {fileID: 4128661696939778}
   - component: {fileID: 143639323862810752}
   - component: {fileID: 114150272300722420}
-  - component: {fileID: 114133531139279646}
-  - component: {fileID: 114139517885333244}
-  - component: {fileID: 114296337841150396}
   - component: {fileID: 114722439032088020}
   - component: {fileID: 114191307443354064}
-  - component: {fileID: 114120395515525928}
   - component: {fileID: 114123283864922564}
   - component: {fileID: 54873467692507170}
   - component: {fileID: 82773390476380178}
@@ -457,7 +453,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630112132631432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8441727, y: 1, z: -2.8900936}
+  m_LocalPosition: {x: -11.278533, y: 4.008, z: -16.933302}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4580675403976224}
@@ -1559,18 +1555,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114120395515525928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630112132631432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b61989beffa4146ae0059d6d7d4d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  usernameT: {fileID: 114149153944160052}
 --- !u!114 &114123283864922564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1605,50 +1589,6 @@ MonoBehaviour:
   stepCycle: 0
   nextStep: 0
   collisionFlags: 0
---- !u!114 &114133531139279646
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630112132631432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53469e96a81a4e4408ef748be989eca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  componentsDisable:
-  - {fileID: 20491082268154952}
-  - {fileID: 114123283864922564}
-  - {fileID: 114866916607024734}
-  - {fileID: 114500881815318146}
-  - {fileID: 81636138282789306}
-  - {fileID: 114722439032088020}
-  - {fileID: 82387326125157560}
-  remoteLayer: Remote
-  noDrawLayer: NoDraw
-  playerGraphics: {fileID: 1661796388103102}
-  playerUsernameBar: {fileID: 1681260159155040}
---- !u!114 &114139517885333244
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630112132631432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 4
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 3
-  m_InterpolateMovement: 0.5
 --- !u!114 &114149153944160052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1725,32 +1665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4596ef9439a2ecb4d9a2350ca3cde646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  disableComponents:
-  - {fileID: 114123283864922564}
-  - {fileID: 114722439032088020}
-  - {fileID: 114866916607024734}
-  - {fileID: 114866916607024734}
-  currentHealth: 0
---- !u!114 &114296337841150396
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630112132631432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 4580675403976224}
-  m_ChildIndex: 0
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
 --- !u!114 &114399776530776094
 MonoBehaviour:
   m_ObjectHideFlags: 1

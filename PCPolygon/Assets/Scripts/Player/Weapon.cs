@@ -22,27 +22,7 @@ public class Weapon : NetworkBehaviour {
     }
 
     void Update() {
-        if(Input.GetKeyDown(shootKey))
-        Shoot();
-    }
-
-    [Client]
-    void Shoot() {
-        RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range, mask)) {
-            print("hit");
-            if (hit.collider.tag == "Player") {
-                CmdTakeDamage(hit.collider.name, damage);
-                print("hit2");
-            }
-        }
-    }
-
-    [Command]
-    void CmdTakeDamage(string playerID, int _damage) {
-        Debug.Log(playerID + " has been hit. " + _damage + " points of damager were dealt.");
-
-        Player player = GameManager.GetPlayer(playerID);
-        player.RpcDamage(_damage);
+        if (Input.GetKeyDown(shootKey)) { }
+        
     }
 }
