@@ -894,7 +894,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 52b9400ebc4c3d640853e780573947af, type: 2}
+  - {fileID: 2100000, guid: 2121b6745bc6f064a94debc5f248bcb9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3409,7 +3409,7 @@ GameObject:
   - component: {fileID: 2105341837}
   - component: {fileID: 2105341842}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Scene Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3477,8 +3477,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2105341836}
-  m_LocalRotation: {x: 0.38268322, y: -0, z: -0, w: 0.9238797}
-  m_LocalPosition: {x: 0, y: 8, z: -10}
+  m_LocalRotation: {x: -0.10601693, y: -0.19784738, z: 0.021541687, w: -0.9742448}
+  m_LocalPosition: {x: -11.67, y: 5.62, z: -19.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3495,7 +3495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 7e6dcc0f9b73f6e41ba83504e03cc1ae, type: 2}
+  profile: {fileID: 11400000, guid: 37b8735e91a18974d9c5f24966eb342e, type: 2}
 --- !u!4 &2134773413 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4028931440410756, guid: 758e2a1278c0b254d95f16cce92dd424,
