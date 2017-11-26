@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4589869072322664}
   - component: {fileID: 114500881815318146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4169834164346234}
   - component: {fileID: 33723396060051506}
   - component: {fileID: 23188003518377490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4399948002585552}
   - component: {fileID: 33234101480620940}
   - component: {fileID: 23615135190005584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4831182273714278}
   - component: {fileID: 33502024847941128}
   - component: {fileID: 23073640165389176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4710208607740584}
   - component: {fileID: 95617961528207136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Augarino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 4715735522770686}
   - component: {fileID: 33679300122032234}
   - component: {fileID: 23690751404350204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 4487358612176716}
   - component: {fileID: 33032263159159212}
   - component: {fileID: 23721828824612852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4856416540068650}
   - component: {fileID: 82387326125157560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Environment Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 4083664203833806}
   - component: {fileID: 33892157273620914}
   - component: {fileID: 23055173951729434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 81636138282789306}
   - component: {fileID: 114866916607024734}
   - component: {fileID: 114939394775442134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4194410623777864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 4058602756846044}
   - component: {fileID: 33013635166448090}
   - component: {fileID: 23504180249763448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 114843720543295022}
   - component: {fileID: 114473783821913136}
   - component: {fileID: 114163866690412832}
+  - component: {fileID: 114327547946837190}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -247,7 +248,7 @@ GameObject:
   - component: {fileID: 4307283599330004}
   - component: {fileID: 33907795286291926}
   - component: {fileID: 23230579785266262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +265,7 @@ GameObject:
   - component: {fileID: 4694519624945074}
   - component: {fileID: 33451195781900756}
   - component: {fileID: 23481589164145582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TempMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +282,7 @@ GameObject:
   - component: {fileID: 4019534932779352}
   - component: {fileID: 33120032657827476}
   - component: {fileID: 23756343276923208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +300,7 @@ GameObject:
   - component: {fileID: 223144967436736024}
   - component: {fileID: 114496779368869266}
   - component: {fileID: 114612041050719226}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +317,7 @@ GameObject:
   - component: {fileID: 4682588258767964}
   - component: {fileID: 33260762736544862}
   - component: {fileID: 23438950462076338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +334,7 @@ GameObject:
   - component: {fileID: 4441148566235382}
   - component: {fileID: 33435219490696836}
   - component: {fileID: 23848532975694142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +351,7 @@ GameObject:
   - component: {fileID: 4804783867413298}
   - component: {fileID: 33008908201615776}
   - component: {fileID: 23507983149967888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +368,7 @@ GameObject:
   - component: {fileID: 4495913304412868}
   - component: {fileID: 33472141563298454}
   - component: {fileID: 23147885342633988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +386,7 @@ GameObject:
   - component: {fileID: 222526354189180712}
   - component: {fileID: 114149153944160052}
   - component: {fileID: 114399776530776094}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +403,7 @@ GameObject:
   - component: {fileID: 4229214160481998}
   - component: {fileID: 33534927899591610}
   - component: {fileID: 23859218130337950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1686,6 +1687,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4596ef9439a2ecb4d9a2350ca3cde646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114327547946837190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630112132631432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350a7848f69d77041b6663c1f452b233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon:
+    name: Augarino
+    damage: 10
+    range: 100
+    rateOfFire: 11
+  shoot: 323
+  cam: {fileID: 20491082268154952}
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &114399776530776094
 MonoBehaviour:
   m_ObjectHideFlags: 1
