@@ -105,17 +105,14 @@ public class TempPlayerControl : MonoBehaviour {
         else
         {
             moveDir += Physics.gravity * gravityMultiplier * Time.fixedDeltaTime;
-            print("fixed3");
         }
         collisionFlags = characterController.Move(moveDir * Time.fixedDeltaTime);
 
         ProgressStepCycle(speed);
-        print("fixed2");
     }
 
     private void GetInput(out float speed)
     {
-        print("get input");
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
@@ -178,7 +175,6 @@ public class TempPlayerControl : MonoBehaviour {
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        print("OnControllerCollider");
         Rigidbody body = hit.collider.attachedRigidbody;
         if (collisionFlags == CollisionFlags.Below)
         {
