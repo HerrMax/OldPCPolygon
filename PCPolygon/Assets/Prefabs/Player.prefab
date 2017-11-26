@@ -1811,6 +1811,8 @@ MonoBehaviour:
   - {fileID: 114866916607024734}
   - {fileID: 82387326125157560}
   - {fileID: 114500881815318146}
+  - {fileID: 114327547946837190}
+  remoteLayer: Remote
   sceneCamera: {fileID: 0}
 --- !u!114 &114866916607024734
 MonoBehaviour:
