@@ -22,14 +22,25 @@ public class WeaponShoot : NetworkBehaviour {
             Shoot();
         }
     }
-
+    
+    [Client]
     void Shoot()
     {
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, mask))
         {
             Debug.Log("Hit: " + hit.collider.name);
+            if (hit.collider.tag == "Player")
+            {
+                CmdPlayerShot(hit.collider.name);
+            }
         }
 
+    }
+
+    [Command]
+    void CmdPlayerShot(string ID)
+    {
+        Debug.Log(ID + " has been shot.");
     }
 }
