@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
+    //Sets up basic system for items to go in
     void Start()
     {
         database = GetComponent<ItemDatabase>();
@@ -33,6 +34,7 @@ public class Inventory : MonoBehaviour
 
     }
 
+    //Test code to test adding items
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
@@ -86,6 +88,7 @@ public class Inventory : MonoBehaviour
         
     }
 
+    //Tests to see if the item already exists.
     bool DoesItemAlreadyExist(Item item)
     {
         for (int i = 0; i < items.Count; i++)

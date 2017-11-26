@@ -17,6 +17,7 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler,IEndDra
         tooltip = inv.GetComponent<Tooltip>();
     }
 
+    //Moving Items
     public void OnPointerDown(PointerEventData eventData)
     {
         if (item!= null)
@@ -43,6 +44,7 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler,IEndDra
         GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 
+    //Tooltip stuff
     public void OnPointerEnter(PointerEventData eventData)
     {
         tooltip.Activate(item);

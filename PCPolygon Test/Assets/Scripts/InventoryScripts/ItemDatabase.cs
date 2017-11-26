@@ -8,12 +8,14 @@ public class ItemDatabase : MonoBehaviour
     private List<Item> database = new List<Item>();
     private JsonData itemData;
 
+    //Loads .json and calls a method to create a database
     private void Start()
     {
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
         ConstructItemDatabase();
     }
 
+    //Locates an item by its ID
     public Item FetchItemByID(int id)
     {
         for (int i = 0; i < database.Count; i++)
@@ -24,6 +26,7 @@ public class ItemDatabase : MonoBehaviour
         return null;
     }
 
+    //Creates a database from the .json
     void ConstructItemDatabase()
     {
         for (int i = 0; i < itemData.Count; i++)
@@ -34,7 +37,7 @@ public class ItemDatabase : MonoBehaviour
 }
 
 
-
+//Setting up the basics for each item
 public class Item
 {
     public int ID { get; set; }
@@ -49,7 +52,7 @@ public class Item
     public string Slug { get; set; }
     public Sprite Sprite { get; set; }
 
-
+    //For adding an Item normally
     public Item(int id, string title, int damage, int range, int rateOfFire, int magsize, string description, bool stackable, int rarity, string slug)
     {
         ID = id;
@@ -65,6 +68,7 @@ public class Item
         Sprite = Resources.Load<Sprite>("InventorySprites/Icons/" + slug);
     }
 
+    //For adding a null item
     public Item()
     {
         ID = -1;
