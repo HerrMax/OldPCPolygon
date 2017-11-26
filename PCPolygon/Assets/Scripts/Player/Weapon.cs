@@ -6,11 +6,9 @@ using UnityEngine.Networking;
 
 public class Weapon : NetworkBehaviour {
 
-    [SerializeField]
-    private Camera cam;
+    [SerializeField] private Camera cam;
 
-    [SerializeField]
-    private LayerMask mask;
+    [SerializeField] private LayerMask mask;
 
     public int range;
     public int damage;

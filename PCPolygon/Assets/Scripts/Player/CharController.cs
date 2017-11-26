@@ -70,8 +70,6 @@ public class CharController : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        bool wasWalking = isWalking;
-
         isWalking = !Input.GetKey(KeyCode.LeftShift);
 
         speed = isWalking ? walkSpeed : runSpeed;

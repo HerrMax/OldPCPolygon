@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 114123283864922564}
   - component: {fileID: 54873467692507170}
   - component: {fileID: 82773390476380178}
+  - component: {fileID: 114843720543295022}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1746,6 +1747,17 @@ MonoBehaviour:
   range: 100
   damage: 10
   shootKey: 323
+--- !u!114 &114843720543295022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630112132631432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6175e48ec772445438681d28840b1417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114866916607024734
 MonoBehaviour:
   m_ObjectHideFlags: 1

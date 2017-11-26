@@ -79,7 +79,6 @@ public class TempPlayerControl : MonoBehaviour {
     {
         float speed;
         GetInput(out speed);
-        print("fixed1");
         Vector3 desiredMove = transform.forward * input.y + transform.right * input.x;
 
         RaycastHit hitInfo;
@@ -116,7 +115,6 @@ public class TempPlayerControl : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        bool wasWalking = isWalking;
 
         isWalking = !Input.GetKey(KeyCode.LeftShift);
 
