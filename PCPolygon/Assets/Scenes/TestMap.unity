@@ -4011,6 +4011,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2060304175}
+  - component: {fileID: 2060304174}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -4018,6 +4019,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2060304174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060304173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72fe578354000d643821bc4e58f4b236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2060304175
 Transform:
   m_ObjectHideFlags: 0
