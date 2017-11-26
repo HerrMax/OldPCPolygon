@@ -223,12 +223,12 @@ GameObject:
   - component: {fileID: 4128661696939778}
   - component: {fileID: 143639323862810752}
   - component: {fileID: 114150272300722420}
-  - component: {fileID: 114722439032088020}
   - component: {fileID: 114191307443354064}
   - component: {fileID: 114123283864922564}
   - component: {fileID: 54873467692507170}
   - component: {fileID: 82773390476380178}
   - component: {fileID: 114843720543295022}
+  - component: {fileID: 114473783821913136}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -454,7 +454,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630112132631432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.186693, y: 1, z: 4.8016796}
+  m_LocalPosition: {x: -3.2560322, y: 1, z: -4.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4580675403976224}
@@ -1677,6 +1677,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05b44e41c365e4469c5ef05b38f4e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114473783821913136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630112132631432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 4
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114496779368869266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1729,24 +1750,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114722439032088020
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630112132631432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f8d653069aacc4a87a6026f65fbd51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 20491082268154952}
-  mask:
-    serializedVersion: 2
-    m_Bits: 4294967039
-  range: 100
-  damage: 10
-  shootKey: 323
 --- !u!114 &114843720543295022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1758,7 +1761,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6175e48ec772445438681d28840b1417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  componentsToDisable: []
+  componentsToDisable:
+  - {fileID: 114123283864922564}
+  - {fileID: 82773390476380178}
+  - {fileID: 20491082268154952}
+  - {fileID: 81636138282789306}
+  - {fileID: 114866916607024734}
+  - {fileID: 82387326125157560}
+  sceneCamera: {fileID: 0}
 --- !u!114 &114866916607024734
 MonoBehaviour:
   m_ObjectHideFlags: 1
