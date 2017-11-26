@@ -31,9 +31,14 @@ public class Inventory : MonoBehaviour
             slots[i].transform.SetParent(slotPanel.transform);
         }
 
-        AddItem(3000);
-        AddItem(3001);
-        AddItem(3000);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            AddItem(3000);
+        }
     }
 
     public void AddItem(int id)
@@ -65,7 +70,7 @@ public class Inventory : MonoBehaviour
                     itemObj.GetComponent<ItemData>().item = itemToAdd;
                     itemObj.GetComponent<ItemData>().slot = i;
                     itemObj.transform.SetParent(slots[i].transform);
-                    itemObj.transform.position = Vector2.zero;
+                    itemObj.transform.position = itemObj.transform.parent.position;
                     itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
                     itemObj.transform.parent.name = itemToAdd.Title;
 
