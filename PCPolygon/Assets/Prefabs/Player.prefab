@@ -1819,7 +1819,8 @@ MonoBehaviour:
   - {fileID: 114500881815318146}
   - {fileID: 114327547946837190}
   remoteLayer: Remote
-  sceneCamera: {fileID: 0}
+  playerUICanvas: {fileID: 1486553699970004, guid: fe6c68389718c3a4782460242c431b74,
+    type: 2}
   dontDrawLayer: NoDraw
   playerGraphics: {fileID: 1661796388103102}
 --- !u!114 &114866916607024734

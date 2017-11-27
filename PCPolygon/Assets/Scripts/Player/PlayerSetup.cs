@@ -10,6 +10,9 @@ public class PlayerSetup :  NetworkBehaviour {
 
     [SerializeField] string remoteLayer = "Remote";
 
+    [SerializeField] GameObject playerUICanvas;
+    private GameObject playerUIInstance;
+
     Camera sceneCamera;
 
     [SerializeField] string dontDrawLayer = "NoDraw";
@@ -30,6 +33,9 @@ public class PlayerSetup :  NetworkBehaviour {
             }
 
             SetLayerRecursively(playerGraphics, LayerMask.NameToLayer(dontDrawLayer));
+
+            playerUIInstance = Instantiate(playerUICanvas);
+            playerUIInstance.name = transform.name + "'s UI";
         }
 
         GetComponent<Player>().Setup();
@@ -69,6 +75,8 @@ public class PlayerSetup :  NetworkBehaviour {
 
     private void OnDisable()
     {
+        Destroy(playerUIInstance);
+
         if(sceneCamera != null)
         {
             sceneCamera.gameObject.SetActive(true);
