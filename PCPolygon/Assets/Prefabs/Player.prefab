@@ -1820,6 +1820,8 @@ MonoBehaviour:
   - {fileID: 114327547946837190}
   remoteLayer: Remote
   sceneCamera: {fileID: 0}
+  dontDrawLayer: NoDraw
+  playerGraphics: {fileID: 1661796388103102}
 --- !u!114 &114866916607024734
 MonoBehaviour:
   m_ObjectHideFlags: 1
