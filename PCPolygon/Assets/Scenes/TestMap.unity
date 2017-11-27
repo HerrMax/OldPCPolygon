@@ -1564,7 +1564,6 @@ GameObject:
   - component: {fileID: 876517867}
   - component: {fileID: 876517868}
   - component: {fileID: 876517869}
-  - component: {fileID: 876517870}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -1687,17 +1686,6 @@ MonoBehaviour:
   showGUI: 1
   offsetX: 0
   offsetY: 0
---- !u!114 &876517870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 876517866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b86e378af61b4747b9fbb39a0694c5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &908074862
 Prefab:
   m_ObjectHideFlags: 0
@@ -4046,6 +4034,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fe578354000d643821bc4e58f4b236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSettings:
+    respawnTime: 3
 --- !u!4 &2060304175
 Transform:
   m_ObjectHideFlags: 0
