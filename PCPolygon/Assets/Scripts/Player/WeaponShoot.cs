@@ -29,9 +29,9 @@ public class WeaponShoot : NetworkBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, mask))
         {
-            Debug.Log("Hit: " + hit.collider.name);
             if (hit.collider.tag == "Player")
             {
+                Debug.Log(this.transform.name + " shot " + hit.collider.name);
                 CmdPlayerShot(hit.collider.name, weapon.damage);
             }
         }
@@ -44,6 +44,6 @@ public class WeaponShoot : NetworkBehaviour {
         Debug.Log(playerID + " has been shot.");
 
         Player player = GameManager.GetPlayer(playerID);
-        player.TakeDamage(damage);
+        player.RpcTakeDamage(damage);
     }
 }

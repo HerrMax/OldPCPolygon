@@ -456,7 +456,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630112132631432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0847712, y: -3.7499032e-17, z: 8.444032}
+  m_LocalPosition: {x: -5.7372756, y: 1.68, z: 3.6939306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4580675403976224}
@@ -1688,6 +1688,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  disableOnDeath:
+  - {fileID: 114123283864922564}
+  - {fileID: 114327547946837190}
+  - {fileID: 114866916607024734}
+  - {fileID: 114500881815318146}
 --- !u!114 &114327547946837190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1708,7 +1713,7 @@ MonoBehaviour:
   cam: {fileID: 20491082268154952}
   mask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4294967039
 --- !u!114 &114399776530776094
 MonoBehaviour:
   m_ObjectHideFlags: 1
