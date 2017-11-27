@@ -72,7 +72,18 @@ public class Player : NetworkBehaviour {
 
         Debug.Log(transform.name + " is dead.");
 
-        
+        StartCoroutine(Respawn());
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(GameManager.singleton.gameSettings.respawnTime);
+        setDefaults();
+        Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
+        transform.position = spawnPoint.position;
+        transform.rotation = spawnPoint.rotation;
+
+        Debug.Log(transform.name + " has respawned.");
     }
 
     public void setDefaults()

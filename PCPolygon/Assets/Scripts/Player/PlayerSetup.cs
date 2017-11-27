@@ -12,6 +12,9 @@ public class PlayerSetup :  NetworkBehaviour {
 
     [SerializeField] Camera sceneCamera;
 
+    [SerializeField] string dontDrawLayer = "NoDraw";
+    [SerializeField] GameObject playerGraphics;
+
 	void Start () {
         if (!isLocalPlayer)
         {
@@ -25,6 +28,8 @@ public class PlayerSetup :  NetworkBehaviour {
             {
                 sceneCamera.gameObject.SetActive(false);
             }
+
+
         }
 
         GetComponent<Player>().Setup();

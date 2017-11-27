@@ -5,6 +5,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public static GameManager singleton;
+
+    public GameSettings gameSettings;
+
+    private void Awake()
+    {
+        if (singleton != null) return;
+
+        singleton = this;
+    }
+
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
 
     public static void RegisterPlayer(string netID, Player player)
