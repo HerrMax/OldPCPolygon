@@ -5,52 +5,52 @@ using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour {
 
-    [SerializeField]
-    private int maxHealth = 100;
-
-    [SerializeField]
-    private Behaviour[] disableComponents;
-    private bool[] wasEnabled;
-
     [SyncVar]
-    public int currentHealth;
-
-    [SyncVar]
-    private bool isDeadSync = false;
+    private bool _isDead = false;
     public bool isDead {
-        get { return isDeadSync; }
-        protected set { isDeadSync = value; }
+        get { return _isDead; }
+        protected set { _isDead = value; }
     }
 
-	public void Setup () {
-        wasEnabled = new bool[disableComponents.Length];
-        for (int i = 0; i < wasEnabled.Length; i++) {
-            wasEnabled[i] = disableComponents[i].enabled;
+    [SerializeField]
+    private float maxHealth = 100f;
+
+    [SyncVar]
+    private float currentHealth;
+
+    [SerializeField]
+    private Behaviour[] disableOnDeath;
+    private bool[] wasEnabled;
+
+    public void Setup()
+    {
+        wasEnabled = new bool[disableOnDeath.Length];
+        for (int i = 0; i < wasEnabled.Length; i++)
+        {
+            wasEnabled[i] = disableOnDeath[i].enabled;
         }
 
-        SetStats();
-	}
+        setDefaults();
+    }
 
-    void Update()
+    private void Update()
     {
         if (!isLocalPlayer) return;
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            RpcDamage(maxHealth);
+            RpcTakeDamage(maxHealth);
         }
-
     }
-	
+
     [ClientRpc]
-    public void RpcDamage(int amount)
+    public void RpcTakeDamage(float amount)
     {
-        if (isDeadSync) return;
-        if (isServer) return;
+        if (isDead) return;
 
         currentHealth -= amount;
 
-        Debug.Log(transform.name + " has " + currentHealth + " health.");
+        Debug.Log(transform.name + " now has " + currentHealth + " health.");
 
         if(currentHealth <= 0)
         {
@@ -62,54 +62,42 @@ public class Player : NetworkBehaviour {
     {
         isDead = true;
 
-        Debug.Log("Die1");
-
-        for (int i = 0; i < disableComponents.Length; i++)
+        for (int i = 0; i < disableOnDeath.Length; i++)
         {
-            disableComponents[i].enabled = false;
+            disableOnDeath[i].enabled = false;
         }
 
-        Debug.Log("Die2");
+        Collider col = GetComponent<Collider>();
+        if (col != null) col.enabled = false;
 
-        Collider playerCol = GetComponent<Collider>();
-        if (playerCol != null)
-        {
-            playerCol.enabled = false;
-        }
+        Debug.Log(transform.name + " is dead.");
 
-        Debug.Log(transform.name + " died.");
-
-        StartCoroutine(Respawn(3f));
+        StartCoroutine(Respawn());
     }
 
-    IEnumerator Respawn(float timeToRespawn)
+    private IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(timeToRespawn);
-
-        SetStats();
+        yield return new WaitForSeconds(GameManager.singleton.gameSettings.respawnTime);
+        setDefaults();
         Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
 
-        Debug.Log(transform.name + " has respawned!");
+        Debug.Log(transform.name + " has respawned.");
     }
 
-    public void SetStats()
+    public void setDefaults()
     {
         isDead = false;
 
-        if (isLocalPlayer)
+        currentHealth = maxHealth;
+
+        for (int i = 0; i < wasEnabled.Length; i++)
         {
-            currentHealth = maxHealth;
+            disableOnDeath[i].enabled = wasEnabled[i];
         }
 
-        for (int i = 0; i < disableComponents.Length; i++) {
-            disableComponents[i].enabled = wasEnabled[i];
-        }
-
-        Collider playerCol = GetComponent<Collider>();
-        if (playerCol != null) {
-            playerCol.enabled = true;
-        }
+        Collider col = GetComponent<Collider>();
+        if (col != null) col.enabled = true;
     }
 }
