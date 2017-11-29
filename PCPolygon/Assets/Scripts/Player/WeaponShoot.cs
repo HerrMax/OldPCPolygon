@@ -23,8 +23,6 @@ public class WeaponShoot : NetworkBehaviour {
         {
             Shoot();
         }
-
-        //HERAUHJRASR
         
         SetLayerRecursively(weaponGraphic, LayerMask.NameToLayer(viewmodelLayerName));
     }
