@@ -31,7 +31,7 @@ public class CharController : MonoBehaviour {
     {
         characterController = GetComponent<CharacterController>();
         stepCycle = 0f;
-        nextStep = stepCycle / 2f;
+        nextStep = stepCycle/ 2f;
         jumping = false;
         audioSource = GetComponent<AudioSource>();
     }
@@ -94,6 +94,7 @@ public class CharController : MonoBehaviour {
 
     private void GetInput(out float speed)
     {
+        //Use Input.GetAxisRaw for more responsive controls
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 

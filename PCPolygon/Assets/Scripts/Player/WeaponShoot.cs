@@ -5,7 +5,9 @@ using UnityEngine.Networking;
 
 public class WeaponShoot : NetworkBehaviour {
 
-    public Weapon weapon;
+    [SerializeField] private Weapon weapon;
+    [SerializeField] private GameObject weaponGraphic;
+    [SerializeField] private string viewmodelLayerName = "Viewmodel";
 
     public KeyCode shoot = KeyCode.Mouse0;
 
@@ -20,6 +22,20 @@ public class WeaponShoot : NetworkBehaviour {
         if (Input.GetKeyDown(shoot))
         {
             Shoot();
+        }
+
+        //HERAUHJRASR
+        
+        SetLayerRecursively(weaponGraphic, LayerMask.NameToLayer(viewmodelLayerName));
+    }
+
+    void SetLayerRecursively(GameObject obj, int newLayer)
+    {
+        obj.layer = newLayer;
+
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, newLayer);
         }
     }
     
