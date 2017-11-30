@@ -7,4 +7,6 @@ public class Weapon {
     public float range = 100f;
     public bool isAutomatic = true;
     public float rateOfFire = 11f;
+
+    public GameObject graphics;
 }
