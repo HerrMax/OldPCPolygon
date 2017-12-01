@@ -69,7 +69,10 @@ public class PlayerSetup : NetworkBehaviour {
     {
         Destroy(playerUIInstance);
 
-        GameManager.singleton.SetSceneCameraActive(true);
+        if (isLocalPlayer)
+        {
+            GameManager.singleton.SetSceneCameraActive(true);
+        }
 
         GameManager.DeregisterPlayer(transform.name);
     }

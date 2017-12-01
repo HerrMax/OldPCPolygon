@@ -103,6 +103,8 @@ public class Player : NetworkBehaviour {
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
 
+        yield return new WaitForSeconds(0.1f);
+
         setDefaults();
 
         Debug.Log(transform.name + " has respawned.");
