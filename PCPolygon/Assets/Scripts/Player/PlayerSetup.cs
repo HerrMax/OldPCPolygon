@@ -4,16 +4,14 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 [RequireComponent(typeof(Player))]
-public class PlayerSetup :  NetworkBehaviour {
+public class PlayerSetup : NetworkBehaviour {
 
     [SerializeField] Behaviour[] componentsToDisable;
 
     [SerializeField] string remoteLayer = "Remote";
 
     [SerializeField] GameObject playerUICanvas;
-    private GameObject playerUIInstance;
-
-    Camera sceneCamera;
+    [HideInInspector] public GameObject playerUIInstance;
 
     [SerializeField] string dontDrawLayer = "NoDraw";
     [SerializeField] GameObject playerGraphics;
@@ -26,12 +24,6 @@ public class PlayerSetup :  NetworkBehaviour {
         }
         else
         {
-            sceneCamera = Camera.main;
-            if (sceneCamera != null)
-            {
-                sceneCamera.gameObject.SetActive(false);
-            }
-
             SetLayerRecursively(playerGraphics, LayerMask.NameToLayer(dontDrawLayer));
 
             playerUIInstance = Instantiate(playerUICanvas);
@@ -77,10 +69,7 @@ public class PlayerSetup :  NetworkBehaviour {
     {
         Destroy(playerUIInstance);
 
-        if(sceneCamera != null)
-        {
-            sceneCamera.gameObject.SetActive(true);
-        }
+        GameManager.singleton.SetSceneCameraActive(true);
 
         GameManager.DeregisterPlayer(transform.name);
     }

@@ -9,12 +9,22 @@ public class GameManager : MonoBehaviour {
 
     public GameSettings gameSettings;
 
+    [SerializeField] private GameObject sceneCamera;
+
     private void Awake()
     {
         if (singleton != null) return;
 
         singleton = this;
     }
+
+    public void SetSceneCameraActive (bool isActive)
+    {
+        if (sceneCamera == null) return;
+        sceneCamera.SetActive(isActive);
+    }
+
+#region playerStuff
 
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
 
@@ -34,4 +44,5 @@ public class GameManager : MonoBehaviour {
     {
         return players[playerID];
     }
+#endregion
 }

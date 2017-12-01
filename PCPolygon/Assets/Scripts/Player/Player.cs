@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+[RequireComponent(typeof(PlayerSetup))]
 public class Player : NetworkBehaviour {
 
     [SyncVar]
@@ -82,6 +83,13 @@ public class Player : NetworkBehaviour {
         GameObject instance = (GameObject)Instantiate(deathParticles, transform.position, Quaternion.identity);
         Destroy(instance, 5f);
 
+
+        if (isLocalPlayer)
+        {
+            GameManager.singleton.SetSceneCameraActive(true);
+            GetComponent<PlayerSetup>().playerUIInstance.SetActive(false);
+        }
+
         Debug.Log(transform.name + " is dead.");
 
         StartCoroutine(Respawn());
@@ -118,5 +126,11 @@ public class Player : NetworkBehaviour {
 
         Collider col = GetComponent<Collider>();
         if (col != null) col.enabled = true;
+
+        if (isLocalPlayer)
+        {
+            GameManager.singleton.SetSceneCameraActive(false);
+            GetComponent<PlayerSetup>().playerUIInstance.SetActive(true);
+        }
     }
 }
