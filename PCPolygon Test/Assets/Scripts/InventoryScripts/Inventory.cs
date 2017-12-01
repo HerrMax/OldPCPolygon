@@ -59,9 +59,6 @@ public class Inventory : MonoBehaviour
             {
                 if (items[i].ID == id)
                 {
-                    Debug.Log(id);
-                    Debug.Log(items[i].ID);
-
                     ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
                     data.amount++;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();

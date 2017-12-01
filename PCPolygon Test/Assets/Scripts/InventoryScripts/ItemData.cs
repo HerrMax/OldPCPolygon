@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
+public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IEndDragHandler
 {
     public Item item;
     public int amount;
@@ -29,6 +29,13 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         }
     }
 
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        transform.SetParent(inv.slots[slot].transform);
+        transform.position = inv.slots[slot].transform.position;
+        GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+
     public void OnPointerUp(PointerEventData eventData)
     {
         transform.SetParent(inv.slots[slot].transform);
@@ -54,4 +61,5 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     {
         tooltip.Deactivate();
     }
+
 }
