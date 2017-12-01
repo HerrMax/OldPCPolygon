@@ -16,6 +16,7 @@ public class WeaponManager : NetworkBehaviour {
     [SerializeField] private string viewmodelLayerName = "Viewmodel";
 
     private Weapon currentWeapon;
+    private WeaponGraphics currentGraphics;
 
     private void Start()
     {
@@ -27,12 +28,21 @@ public class WeaponManager : NetworkBehaviour {
         return currentWeapon;
     }
 
+    public WeaponGraphics GetCurrentGraphics()
+    {
+        return currentGraphics;
+    }
+
     void EquipTool(Weapon weaponName)
     {
         currentWeapon = weaponName;
 
         GameObject weaponInstance = (GameObject)Instantiate(weaponName.graphics, weaponHolder.position, weaponHolder.rotation);
         weaponInstance.transform.SetParent(weaponHolder);
+
+        currentGraphics = weaponInstance.GetComponent<WeaponGraphics>();
+        if (currentGraphics == null) Debug.LogError("NOGRAPHICS: " + weaponInstance.name);
+
         if (isLocalPlayer)
         {
             SetLayerRecursively(weaponInstance, LayerMask.NameToLayer(viewmodelLayerName));

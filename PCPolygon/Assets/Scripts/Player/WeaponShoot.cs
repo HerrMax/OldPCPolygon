@@ -41,11 +41,42 @@ public class WeaponShoot : NetworkBehaviour {
             }
         }
     }
-    
+
+    [Command]
+    void CmdOnShoot()
+    {
+        RpcPlayMuzzleFlash();
+    }
+
+    [ClientRpc]
+    void RpcPlayMuzzleFlash()
+    {
+        weaponManager.GetCurrentGraphics().muzzleFlash.Play();
+    }
+
+    [Command]
+    void CmdOnHit(Vector3 pos, Vector3 normal)
+    {
+        RpcImpactEffect(pos, normal);
+    }
+
+    [ClientRpc]
+    void RpcImpactEffect(Vector3 pos, Vector3 normal)
+    {
+        GameObject instance = (GameObject)Instantiate(weaponManager.GetCurrentGraphics().groundImpact, pos, Quaternion.LookRotation(normal));
+        Destroy(instance, 2f);
+    }
+
     [Client]
     void Shoot()
     {
-        
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
+        CmdOnShoot();
+
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, currentWeapon.range, mask))
         {
@@ -54,6 +85,8 @@ public class WeaponShoot : NetworkBehaviour {
                 Debug.Log(this.transform.name + " shot " + hit.collider.name);
                 CmdPlayerShot(hit.collider.name, currentWeapon.damage);
             }
+
+            CmdOnHit(hit.point, hit.normal);
         }
 
     }
