@@ -22,6 +22,10 @@ public class Player : NetworkBehaviour {
     private Behaviour[] disableOnDeath;
     private bool[] wasEnabled;
 
+    [SerializeField] GameObject[] disableGameObjectsOnDeath;
+
+    [SerializeField] private GameObject deathParticles;
+
     public void Setup()
     {
         wasEnabled = new bool[disableOnDeath.Length];
@@ -67,8 +71,16 @@ public class Player : NetworkBehaviour {
             disableOnDeath[i].enabled = false;
         }
 
+        for (int i = 0; i < disableGameObjectsOnDeath.Length; i++)
+        {
+            disableGameObjectsOnDeath[i].SetActive(false);
+        }
+
         Collider col = GetComponent<Collider>();
         if (col != null) col.enabled = false;
+
+        GameObject instance = (GameObject)Instantiate(deathParticles, transform.position, Quaternion.identity);
+        Destroy(instance, 5f);
 
         Debug.Log(transform.name + " is dead.");
 
@@ -95,6 +107,11 @@ public class Player : NetworkBehaviour {
         for (int i = 0; i < wasEnabled.Length; i++)
         {
             disableOnDeath[i].enabled = wasEnabled[i];
+        }
+
+        for (int i = 0; i < disableGameObjectsOnDeath.Length; i++)
+        {
+            disableGameObjectsOnDeath[i].SetActive(true);
         }
 
         Collider col = GetComponent<Collider>();

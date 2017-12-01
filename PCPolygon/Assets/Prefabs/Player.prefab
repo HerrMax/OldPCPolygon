@@ -194,7 +194,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630112132631432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9987423, y: 1, z: 6.7456536}
+  m_LocalPosition: {x: 0.45871913, y: 1, z: 0.5173164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4580675403976224}
@@ -713,6 +713,11 @@ MonoBehaviour:
   - {fileID: 114327547946837190}
   - {fileID: 114866916607024734}
   - {fileID: 114500881815318146}
+  disableGameObjectsOnDeath:
+  - {fileID: 1661796388103102}
+  - {fileID: 1625454646752350}
+  deathParticles: {fileID: 1271149315007406, guid: 942799fd8eef4b740857fd627c02f202,
+    type: 2}
 --- !u!114 &114297078824355824
 MonoBehaviour:
   m_ObjectHideFlags: 1
