@@ -36,7 +36,7 @@
     "title": "Ronald the Ray-gun",
     "stats": {
       "damage": 21,
-      "range": 500, //Not too sure of this. Feel free to change it
+      "range": 500,
       "rateOfFire": 1,
       "magSize": 1
     },
