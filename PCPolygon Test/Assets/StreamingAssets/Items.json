@@ -1,5 +1,6 @@
-[//All values are temporary. Please feel free to change any of them.
-// 0 = resource, 1 = consumable, 2 = ammo, 3 = weapon
+[ //All values are temporary. Please feel free to change any of them.
+  // 0 = resource, 1 = consumable, 2 = ammo, 3 = weapon
+  //Types: 0 - Primary; 1 - Secondary; 2 - Other
   {
     "id": 3000,
     "title": "Augarino",
@@ -12,7 +13,8 @@
     "description": "An all round decent assault rifle",
     "stackable": true, // Just for testing. Change to false later
     "rarity": 0, //For spawning stuff in. Setting all values to 0 so we need to change it later
-    "slug": "augarino"
+    "slug": "augarino",
+    "type":  1
   },
   {
     "id": 3001,
@@ -26,6 +28,7 @@
     "description": "A long ranged sniper rifle for when stuff is a long way away",
     "stackable": false,
     "rarity": 0,
-    "slug": "matteson"
+    "slug": "matteson",
+    "type":  0
   }
 ]
