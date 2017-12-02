@@ -7,7 +7,8 @@ public class Inventory : MonoBehaviour
 {
 
     GameObject inventoryPanel;
-    GameObject slotPanel;
+    GameObject inventorySlotPanel;
+    GameObject toolbarSlotPanel;
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
@@ -23,15 +24,24 @@ public class Inventory : MonoBehaviour
 
         slotAmount = 15;
         inventoryPanel = GameObject.Find("Inventory Panel");
-        slotPanel = inventoryPanel.transform.Find("Slot Panel").gameObject;
-        for(int i = 0; i < slotAmount; i++)
+        inventorySlotPanel = inventoryPanel.transform.Find("Inventory Slot Panel").gameObject;
+        toolbarSlotPanel = inventoryPanel.transform.Find("Toolbar Slot Panel").gameObject;
+
+        for (int i = 0; i < 5; i++)
         {
             items.Add(new Item());
             slots.Add(Instantiate(inventorySlot));
             slots[i].GetComponent<ItemSlot>().id = i;
-            slots[i].transform.SetParent(slotPanel.transform);
+            slots[i].transform.SetParent(toolbarSlotPanel.transform);
         }
-
+        
+        for (int i = 0; i < slotAmount; i++)
+        {
+            items.Add(new Item());
+            slots.Add(Instantiate(inventorySlot));
+            slots[i+5].GetComponent<ItemSlot>().id = i+5;
+            slots[i+5].transform.SetParent(inventorySlotPanel.transform);
+        }
     }
 
     //Test code to test adding items
