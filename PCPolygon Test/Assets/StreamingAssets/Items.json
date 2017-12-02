@@ -30,5 +30,20 @@
     "rarity": 0,
     "slug": "matteson",
     "type":  0
+  },
+  {
+    "id": 3002,
+    "title": "Ronald the Ray-gun",
+    "stats": {
+      "damage": 21,
+      "range": 500, //Not too sure of this. Feel free to change it
+      "rateOfFire": 1,
+      "magSize": 1
+    },
+    "description": "Pew pew daddy.",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "raygun",
+    "type":  2
   }
 ]

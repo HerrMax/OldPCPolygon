@@ -19,6 +19,14 @@ public class MenuManager : NetworkManager {
         NetworkManager.singleton.StartClient();
     }
 
+    public void DisconnectGame()
+    {
+        SetIPAddress();
+        SetPort();
+        NetworkManager.singleton.StartClient();
+
+    }
+
     void SetIPAddress()
     {
         string ipAddress = GameObject.Find("IPInputField").transform.Find("Text").GetComponent<Text>().text;
@@ -35,12 +43,14 @@ public class MenuManager : NetworkManager {
     {
         if(level == 0)
         {
-            SetupMenuSceneButtons();
+            StartCoroutine(SetupMenuSceneButtons());
+            SetupOtherSceneButtons();
         }
     }
 
-    void SetupMenuSceneButtons()
+    IEnumerator SetupMenuSceneButtons()
     {
+        yield return new WaitForSeconds(0.3f);
         GameObject.Find("HostButton").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("HostButton").GetComponent<Button>().onClick.AddListener(StartupHost);
 
@@ -51,7 +61,8 @@ public class MenuManager : NetworkManager {
     public static void SetupOtherSceneButtons()
     {
         GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.RemoveAllListeners();
-        GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopHost);
+        //GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopHost);
+        GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopClient);
     }
 
 }

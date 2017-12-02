@@ -56,6 +56,11 @@ public class Inventory : MonoBehaviour
         {
             AddItem(3001);
         }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            AddItem(3002);
+        }
     }
 
     public void AddItem(int id)
