@@ -44,6 +44,9 @@ public class MenuManager : NetworkManager {
         if(level == 0)
         {
             StartCoroutine(SetupMenuSceneButtons());
+
+        } else
+        {
             SetupOtherSceneButtons();
         }
     }
@@ -60,8 +63,8 @@ public class MenuManager : NetworkManager {
 
     public static void SetupOtherSceneButtons()
     {
+        print("jeff");
         GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.RemoveAllListeners();
-        //GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopHost);
         GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopClient);
     }
 
