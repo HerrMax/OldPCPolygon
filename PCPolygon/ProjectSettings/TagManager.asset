@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InventoryPanel
   - Crosshair
+  - Inventory
   layers:
   - Default
   - TransparentFX
