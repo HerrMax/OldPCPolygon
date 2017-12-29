@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour {
         {
             inventory = GameObject.FindWithTag("InventoryPanel");
             crosshair = GameObject.FindWithTag("Crosshair");
-            inventory.SetActive(false);
+            //inventory.SetActive(false);
         }
     }
 

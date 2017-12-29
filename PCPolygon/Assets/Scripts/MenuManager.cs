@@ -63,7 +63,6 @@ public class MenuManager : NetworkManager {
 
     public static void SetupOtherSceneButtons()
     {
-        print("jeff");
         GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopClient);
     }
