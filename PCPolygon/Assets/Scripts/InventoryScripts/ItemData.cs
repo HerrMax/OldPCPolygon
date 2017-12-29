@@ -10,7 +10,6 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private Inventory inv;
     private Tooltip tooltip;
     private Vector2 offset;
-    private Transform originalPos;
 
     void Start()
     {
@@ -48,16 +47,10 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     {
         if (item != null)
         {
-            originalPos.position = transform.position;
             transform.position = eventData.position - offset;
         }
     }
     
-    public void CancelDrag()
-    {
-        transform.position = originalPos.position;
-    }
-
     //Tooltip stuff
     public void OnPointerEnter(PointerEventData eventData)
     {
