@@ -20,19 +20,17 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-    void Toggle()
+    void toggle(GameObject menuToToggle)
     {
-        inventory.SetActive(!inventory.activeSelf);
-        crosshair.SetActive(!inventory.activeSelf);
-        //inventory.active = !inventory.active;
-        //crosshair.active = !inventory.active;
+        inventory.active = !inventory.active;
+        crosshair.active = !inventory.active;
         for (int i = 0; i < disableOnToggle.Length; i++)
         {
-            disableOnToggle[i].enabled = !inventory.activeSelf;
+            disableOnToggle[i].enabled = !inventory.active;
         }
     }
 
 	void Update () {
-        if (Input.GetKeyDown(inventoryKey)) Toggle();
+        if (Input.GetKeyDown(inventoryKey)) toggle(inventory);
 	}
 }
