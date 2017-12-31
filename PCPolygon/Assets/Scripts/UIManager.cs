@@ -22,11 +22,13 @@ public class UIManager : MonoBehaviour {
 
     void toggle(GameObject menuToToggle)
     {
-        inventory.active = !inventory.active;
-        crosshair.active = !inventory.active;
+        inventory.SetActive(!inventory.activeSelf);
+        crosshair.SetActive(!inventory.activeSelf);
+        //inventory.active = !inventory.active;
+        //crosshair.active = !inventory.active;
         for (int i = 0; i < disableOnToggle.Length; i++)
         {
-            disableOnToggle[i].enabled = !inventory.active;
+            disableOnToggle[i].enabled = !inventory.activeSelf;
         }
     }
 
