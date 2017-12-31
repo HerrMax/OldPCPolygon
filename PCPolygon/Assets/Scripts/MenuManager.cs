@@ -43,11 +43,11 @@ public class MenuManager : NetworkManager {
     {
         if(level == 0)
         {
-            StartCoroutine(SetupMenuSceneButtons());
+            //StartCoroutine(SetupMenuSceneButtons());
 
         } else
         {
-            SetupOtherSceneButtons();
+            //SetupOtherSceneButtons();
         }
     }
 
