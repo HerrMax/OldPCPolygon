@@ -18,8 +18,8 @@ public class Tooltip : MonoBehaviour
         if (tooltip.activeSelf)
         {
             tooltip.transform.position = Input.mousePosition;
-            Deactivate();
         }
+        if (Input.GetKeyDown(KeyCode.Tab)) Deactivate();
     }
 
     public void Activate(Item item)
