@@ -19,6 +19,7 @@ public class Tooltip : MonoBehaviour
         {
             tooltip.transform.position = Input.mousePosition;
         }
+        if (Input.GetKeyDown(KeyCode.Tab)) Deactivate();
     }
 
     public void Activate(Item item)
