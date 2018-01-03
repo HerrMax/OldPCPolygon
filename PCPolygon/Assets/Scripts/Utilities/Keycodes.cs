@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//WIP
+//WIP(ish)
 public class Keycodes
 {
     public KeyCode shoot;
@@ -13,18 +13,18 @@ public class Keycodes
     public KeyCode right;
     public KeyCode inventory;
     public KeyCode drop;
-    public KeyCode usekey;
+    public KeyCode use;
 
     void Start()
     {
-        PlayerPrefs.GetString("shootkey", "Mouse0");
-        PlayerPrefs.GetString("aimkey", "Mouse1");
-        PlayerPrefs.GetString("forwardskey", "W");
-        PlayerPrefs.GetString("backwardskey", "S");
-        PlayerPrefs.GetString("leftkey", "A");
-        PlayerPrefs.GetString("rightkey", "D");
-        PlayerPrefs.GetString("inventorykey", "Tab");
-        PlayerPrefs.GetString("dropkey", "Mouse3");
-        PlayerPrefs.GetString("usekey", "f");
+        shoot = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootkey", "Mouse0"));
+        aim = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("aimkey", "Mouse1"));
+        forwards = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("forwardskey", "W"));
+        backwards = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("backwardskey", "S"));
+        left = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("leftkey", "A"));
+        right = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rightkey", "D"));
+        inventory = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("inventorykey", "Tab"));
+        drop = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("dropkey", "Mouse3"));
+        use = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("usekey", "F"));
     }
 }
