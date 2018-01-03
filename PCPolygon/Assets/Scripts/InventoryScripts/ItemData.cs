@@ -29,6 +29,13 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         }
     }
 
+    void OnDisable()
+    {
+        transform.SetParent(inv.slots[slot].transform);
+        transform.position = inv.slots[slot].transform.position;
+        GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(inv.slots[slot].transform);
