@@ -713,7 +713,7 @@ MonoBehaviour:
   disableOnToggle:
   - {fileID: 114866916607024734}
   - {fileID: 114327547946837190}
-  - {fileID: 114500881815318146}
+  sway: {fileID: 114500881815318146}
   crosshair: {fileID: 1629563317143908, guid: fe6c68389718c3a4782460242c431b74, type: 2}
   inventory: {fileID: 0}
   inventoryKey: 9
@@ -869,6 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseX: 0
   mouseY: 0
+  menuOpen: 0
   rotationSpeed: {x: 0, y: 0, z: 0, w: 0}
   speed: 10
 --- !u!114 &114612041050719226
