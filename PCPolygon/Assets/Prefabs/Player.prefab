@@ -714,6 +714,7 @@ MonoBehaviour:
   - {fileID: 114866916607024734}
   - {fileID: 114327547946837190}
   sway: {fileID: 114500881815318146}
+  weapon: {fileID: 114327547946837190}
   crosshair: {fileID: 1629563317143908, guid: fe6c68389718c3a4782460242c431b74, type: 2}
   inventory: {fileID: 0}
   inventoryKey: 9

@@ -19,7 +19,7 @@ public class Sway : MonoBehaviour {
     }
 
     void Update () {
-        if(menuOpen == true)
+        if(menuOpen == false)
         {
             mouseX = Input.GetAxis("Mouse X");
             mouseY = Input.GetAxis("Mouse Y");
