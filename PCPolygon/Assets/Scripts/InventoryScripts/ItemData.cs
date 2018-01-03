@@ -10,6 +10,7 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private Inventory inv;
     private Tooltip tooltip;
     private Vector2 offset;
+    private Transform originalParent;
 
     void Start()
     {
@@ -17,15 +18,28 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         tooltip = inv.GetComponent<Tooltip>();
     }
 
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            transform.SetParent(originalParent);
+            transform.position = originalParent.transform.position;
+            GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        
+    }
+
     //Moving Items
     public void OnPointerDown(PointerEventData eventData)
     {
         if (item!= null)
         {
+            originalParent = transform.parent;
             offset = eventData.position - new Vector2(transform.position.x, transform.position.y);
             transform.SetParent(transform.parent.parent);
             transform.position = eventData.position - offset;
             GetComponent<CanvasGroup>().blocksRaycasts = false;
+            Debug.Log(originalParent);
         }
     }
 
