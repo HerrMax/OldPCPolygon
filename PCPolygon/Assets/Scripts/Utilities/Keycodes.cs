@@ -13,7 +13,7 @@ public class Keycodes
     public KeyCode right;
     public KeyCode inventory;
     public KeyCode drop;
-    public KeyCode use;
+    public KeyCode usekey;
 
     void Start()
     {
@@ -25,6 +25,6 @@ public class Keycodes
         PlayerPrefs.GetString("rightkey", "D");
         PlayerPrefs.GetString("inventorykey", "Tab");
         PlayerPrefs.GetString("dropkey", "Mouse3");
-        PlayerPrefs.GetString("usekey", "F");
+        PlayerPrefs.GetString("usekey", "f");
     }
 }
