@@ -28,3 +28,6 @@ ExportedObj/
 sysinfo.txt
 *.ide-wal
 *.ide-shm
+PCPolygon/.vs/PCPolygon/v15/sqlite3/storage.ide-shm
+PCPolygon/.vs/PCPolygon/v15/sqlite3/storage.ide-wal
+PCPolygon/.vs/PCPolygon/v15/sqlite3/storage.ide-shm
