@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class MenuManager : NetworkManager {
 
+    private void Start()
+    {
+        GameObject.Find("IPInputField").transform.Find("Text").GetComponent<Text>().text = PlayerPrefs.GetString("LastIP");
+        GameObject.Find("PortInputField").transform.Find("Text").GetComponent<Text>().text = PlayerPrefs.GetString("LastPort");
+    }
+
     public void StartupHost()
     {
         SetPort();
@@ -14,6 +20,8 @@ public class MenuManager : NetworkManager {
 
     public void JoinGame()
     {
+        PlayerPrefs.SetString("LastIP", GameObject.Find("IPInputField").transform.Find("Text").GetComponent<Text>().text);
+        PlayerPrefs.SetString("LastPort", GameObject.Find("PortInputField").transform.Find("Text").GetComponent<Text>().text);
         SetIPAddress();
         SetPort();
         NetworkManager.singleton.StartClient();
