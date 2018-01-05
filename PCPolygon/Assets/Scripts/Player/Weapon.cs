@@ -8,5 +8,9 @@ public class Weapon {
     public bool isAutomatic = true;
     public float rateOfFire = 11f;
 
+    public int verticalRecoi = 1;
+    public int horizontalRecoil = 1;
+    public int additionalHorizontalRecoil = 1;
+
     public GameObject graphics;
 }

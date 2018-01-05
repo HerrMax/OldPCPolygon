@@ -6,16 +6,18 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(WeaponManager))]
 public class WeaponShoot : NetworkBehaviour {
 
-    public KeyCode shoot = KeyCode.Mouse0;
+    [SerializeField] KeyCode shoot = KeyCode.Mouse0;
 
-    [SerializeField]
-    private Camera cam;
+    [SerializeField] private Camera cam;
 
-    [SerializeField]
-    private LayerMask mask;
+    [SerializeField] private LayerMask mask;
 
     private Weapon currentWeapon;
     private WeaponManager weaponManager;
+    [SerializeField] private Recoil recoil;
+
+    [SerializeField] private AudioSource audioS;
+    [SerializeField] private AudioClip shootSound;
 
     private void Start()
     {
@@ -74,6 +76,13 @@ public class WeaponShoot : NetworkBehaviour {
         {
             return;
         }
+
+        audioS.PlayOneShot(shootSound);
+
+        Debug.Log(currentWeapon.verticalRecoi);
+        recoil.ApplyVertKick(currentWeapon.verticalRecoi);
+        recoil.ApplyHorizKick(currentWeapon.horizontalRecoil);
+        recoil.ApplyAdditionalKickToSidee(currentWeapon.additionalHorizontalRecoil);
 
         CmdOnShoot();
 
