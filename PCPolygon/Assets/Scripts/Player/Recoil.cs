@@ -20,7 +20,7 @@ public class Recoil : MonoBehaviour {
 	void Update () {
         RecoilControl();
         //transform.localEulerAngles = new Vector3(-verticalRot/100,horizontalRot/100,0);
-        transform.localEulerAngles = new Vector3(-verticalRot, horizontalRot, 0);
+        transform.localEulerAngles = new Vector3(-verticalRot/2, horizontalRot/2, 0);
     }
 
     public void ApplyVertKick(int recoilToVertical)

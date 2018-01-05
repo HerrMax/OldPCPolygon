@@ -7,5 +7,6 @@ public class WeaponGraphics : MonoBehaviour {
     public ParticleSystem muzzleFlash;
     public GameObject groundImpact;
     public GameObject playerImpact;
+    public AudioSource audioS;
 
 }

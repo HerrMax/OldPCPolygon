@@ -48,12 +48,20 @@ public class WeaponShoot : NetworkBehaviour {
     void CmdOnShoot()
     {
         RpcPlayMuzzleFlash();
+        if (!isLocalPlayer) return;
+        RpcPlaySound();
     }
 
     [ClientRpc]
     void RpcPlayMuzzleFlash()
     {
         weaponManager.GetCurrentGraphics().muzzleFlash.Play();
+    }
+
+    [ClientRpc]
+    void RpcPlaySound()
+    {
+        weaponManager.GetCurrentGraphics().audioS.PlayOneShot(shootSound);
     }
 
     [Command]
@@ -97,7 +105,7 @@ public class WeaponShoot : NetworkBehaviour {
 
             CmdOnHit(hit.point, hit.normal);
         }
-
+         
     }
 
     [Command]

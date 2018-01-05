@@ -845,6 +845,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   recoil: {fileID: 114071303067398636}
+  audioS: {fileID: 82773390476380178}
+  shootSound: {fileID: 8300000, guid: ef31a70c933f5ad4ea98200ce61b6b40, type: 3}
 --- !u!114 &114399776530776094
 MonoBehaviour:
   m_ObjectHideFlags: 1
