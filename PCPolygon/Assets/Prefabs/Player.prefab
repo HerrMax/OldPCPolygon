@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4966033186556398}
   - component: {fileID: 114071303067398636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Recoil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
