@@ -1,0 +1,49 @@
+[ //All values are temporary. Please feel free to change any of them.
+  // 0 = resource, 1 = consumable, 2 = ammo, 3 = weapon
+  //Types: 0 - Primary; 1 - Secondary; 2 - Other
+  {
+    "id": 3000,
+    "title": "Augarino",
+    "stats": {
+      "damage": 10,
+      "range": 100,
+      "rateOfFire": 11,
+      "magSize": 30
+    },
+    "description": "An all round decent assault rifle",
+    "stackable": true, // Just for testing. Change to false later
+    "rarity": 0, //For spawning stuff in. Setting all values to 0 so we need to change it later
+    "slug": "augarino",
+    "type":  1
+  },
+  {
+    "id": 3001,
+    "title": "Matteson",
+    "stats": {
+      "damage": 80,
+      "range": 500, //Not too sure of this. Feel free to change it
+      "rateOfFire": 3,
+      "magSize": 5
+    },
+    "description": "A long ranged sniper rifle for when stuff is a long way away",
+    "stackable": false,
+    "rarity": 0,
+    "slug": "matteson",
+    "type":  0
+  },
+  {
+    "id": 3002,
+    "title": "Ronald the Ray-gun",
+    "stats": {
+      "damage": 21,
+      "range": 500,
+      "rateOfFire": 1,
+      "magSize": 1
+    },
+    "description": "Pew pew daddy.",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "raygun",
+    "type":  2
+  }
+]
