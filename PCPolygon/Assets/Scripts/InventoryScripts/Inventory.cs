@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour
@@ -61,8 +61,14 @@ public class Inventory : MonoBehaviour
         {
             AddItem(3002);
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+            DestroyItemById(3000);
     }
 
+    /// <summary>
+    /// Adds an item to the inventory
+    /// </summary>
+    /// <param name="id"></param>
     public void AddItem(int id)
     {
         Item itemToAdd = database.FetchItemByID(id);
@@ -85,7 +91,7 @@ public class Inventory : MonoBehaviour
         {
             for(int i = 0; i < items.Count; i++)
             {
-                if(items[i].ID == -1 && i >= itemToAdd.Type)
+                if(items[i].ID == -1 && (id <= itemToAdd.Type || id >= 5))
                 {
                     items[i] = itemToAdd;
                     GameObject itemObj = Instantiate(inventoryItem);
@@ -102,6 +108,51 @@ public class Inventory : MonoBehaviour
         }
         
     }
+
+    #region WIP
+    /// <summary>
+    /// Used for destroying an entire stack of items
+    /// </summary>
+    /// <param name="itemID"></param>
+    void DestroyItemById(int itemID)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].ID == itemID)
+            {
+                items[i] = new Item();
+                break;
+            }
+        }
+        Debug.Log("Can't find object by ID. Might want to try something else");
+    }
+
+    /// <summary>
+    /// Used for destroying a certain amount of items from a stack
+    /// </summary>
+    /// <param name="itemID"></param>
+    /// <param name="destroyAmount"></param>
+    void DestroyItemById(int itemID, int destroyAmount)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].ID == itemID)
+            {
+                ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
+                data.amount -= destroyAmount;
+                data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                if (slots[i].transform.GetChild(0).GetComponent<ItemData>().amount < 0)
+                {
+                    Debug.Log("Attempted to delete " + Math.Abs(data.amount) + " too many items of ID:" + itemID);
+                    data.amount = 0;
+                }
+                if (data.amount == 0)
+                    items[i] = new Item();
+                break;
+            }
+        }
+    }
+    #endregion
 
     //Tests to see if the item already exists.
     bool DoesItemAlreadyExist(Item item)

@@ -15,7 +15,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     {
         ItemData droppedItem = eventData.pointerDrag.GetComponent<ItemData>();
 
-        if(droppedItem.item.Type <= id)
+        if(id <= droppedItem.item.Type || id >= 5)
         {
             if (inv.items[id].ID == -1)
             {
