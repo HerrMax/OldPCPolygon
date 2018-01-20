@@ -5,12 +5,11 @@ public class Tooltip : MonoBehaviour
 {
     private Item item;
     private string data;
-    private GameObject tooltip;
+    public GameObject tooltip;
 
     private void Start()
     {
-        tooltip = GameObject.Find("Tooltip");
-        tooltip.SetActive(false);
+        //tooltip.SetActive(false);
     }
 
     private void Update()
@@ -22,7 +21,7 @@ public class Tooltip : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab)) Deactivate();
     }
 
-    public void Activate(Item item)
+    public void Activate(Item item) 
     {
         this.item = item;
         ConstructDataString();

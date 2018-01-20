@@ -133,7 +133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1486553699970004
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 223682541102620848}
   - component: {fileID: 114299548311864954}
   - component: {fileID: 114068473826588770}
+  - component: {fileID: 114138735160314274}
   m_Layer: 5
   m_Name: PlayerUI
   m_TagString: Untagged
@@ -168,7 +169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1509140076133566
 GameObject:
   m_ObjectHideFlags: 1
@@ -321,6 +322,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Hotbar
+--- !u!114 &114138735160314274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486553699970004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584e2bf606a8a7b42ad7a02267e375c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnToggle: []
+  sway: {fileID: 0}
+  weapon: {fileID: 0}
+  crosshair: {fileID: 1629563317143908}
+  inventory: {fileID: 1508300785186222}
+  inventoryKey: 9
 --- !u!114 &114163962398450996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -714,6 +732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4906fc3145687214dabc0a35de450004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tooltip: {fileID: 1599161415535632}
 --- !u!114 &114803897155877990
 MonoBehaviour:
   m_ObjectHideFlags: 1

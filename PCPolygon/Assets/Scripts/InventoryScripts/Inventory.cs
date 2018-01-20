@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         database = GetComponent<ItemDatabase>();
+        Debug.Log(database);
 
         slotAmount = 15;
         inventoryPanel = GameObject.Find("Inventory Panel");

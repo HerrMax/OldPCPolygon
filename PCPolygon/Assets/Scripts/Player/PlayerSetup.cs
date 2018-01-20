@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 public class PlayerSetup : NetworkBehaviour {
 
     [SerializeField] Behaviour[] componentsToDisable;
+    [SerializeField] Behaviour[] disableOnToggle;
 
     [SerializeField] string remoteLayer = "Remote";
 
@@ -28,6 +29,12 @@ public class PlayerSetup : NetworkBehaviour {
 
             playerUIInstance = Instantiate(playerUICanvas);
             playerUIInstance.name = transform.name + "'s UI";
+
+            ToggleMenu toggleMenu = playerUIInstance.GetComponent<ToggleMenu>();
+
+            toggleMenu.disableOnToggle = this.disableOnToggle;
+            toggleMenu.sway = this.GetComponentInChildren<Sway>();
+            toggleMenu.weapon = this.GetComponent<WeaponShoot>();
         }
 
         GetComponent<Player>().Setup();
