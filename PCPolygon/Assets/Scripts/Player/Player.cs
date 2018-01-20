@@ -133,7 +133,6 @@ public class Player : NetworkBehaviour {
         {
             GameManager.singleton.SetSceneCameraActive(false);
             GetComponent<PlayerSetup>().playerUIInstance.SetActive(true);
-            MenuManager.SetupOtherSceneButtons();
         }
     }
 }
