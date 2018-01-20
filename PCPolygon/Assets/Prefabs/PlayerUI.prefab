@@ -152,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1508300785186222
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +424,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b48dd7baeaa9b459c3f664a431b169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 1508300785186222}
+  inventoryPanel: {fileID: 1153770734610642}
+  inventorySlotPanel: {fileID: 1146427329269494}
+  toolbarSlotPanel: {fileID: 1509140076133566}
   inventorySlot: {fileID: 1374206822959018, guid: 532c78d327df2b949851ceb5c67eb590,
     type: 2}
   inventoryItem: {fileID: 1116255625557810, guid: dd2aad9c9ddde834fbc0d4b9547c4fe2,
@@ -1015,10 +1019,10 @@ RectTransform:
   m_Father: {fileID: 224407258616044804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 87, y: -15}
+  m_SizeDelta: {x: 160, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224347688712431528
 RectTransform:
@@ -1132,7 +1136,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -90, y: 35.200012}
-  m_SizeDelta: {x: 170, y: 0}
+  m_SizeDelta: {x: 170, y: 30}
   m_Pivot: {x: -0.1, y: 1.3}
 --- !u!224 &224564598726546996
 RectTransform:

@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour
 {
-
-    GameObject inventoryPanel;
-    GameObject inventorySlotPanel;
-    GameObject toolbarSlotPanel;
+    public GameObject inventory;
+    public GameObject inventoryPanel;
+    public GameObject inventorySlotPanel;
+    public GameObject toolbarSlotPanel;
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
@@ -24,9 +24,9 @@ public class Inventory : MonoBehaviour
         Debug.Log(database);
 
         slotAmount = 15;
-        inventoryPanel = GameObject.Find("Inventory Panel");
-        inventorySlotPanel = inventoryPanel.transform.Find("Inventory Slot Panel").gameObject;
-        toolbarSlotPanel = inventoryPanel.transform.Find("Toolbar Slot Panel").gameObject;
+        //inventoryPanel = GameObject.Find("Inventory Panel");
+        //inventorySlotPanel = inventoryPanel.transform.Find("Inventory Slot Panel").gameObject;
+        //toolbarSlotPanel = inventoryPanel.transform.Find("Toolbar Slot Panel").gameObject;
 
         for (int i = 0; i < 5; i++)
         {
@@ -43,6 +43,8 @@ public class Inventory : MonoBehaviour
             slots[i+5].GetComponent<ItemSlot>().id = i+5;
             slots[i+5].transform.SetParent(inventorySlotPanel.transform);
         }
+
+        inventory.SetActive(false);
     }
 
     //Test code to test adding items
