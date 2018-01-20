@@ -1,6 +1,6 @@
 [ //All values are temporary. Please feel free to change any of them.
   // 0 = resource, 1 = consumable, 2 = ammo, 3 = weapon
-  //Types: 0 - Primary; 1 - Secondary; 2 - Other
+  //Types: 0 - Primary; 1 - Secondary; 4 - Other
   {
     "id": 3000,
     "title": "Augarino",
@@ -44,6 +44,6 @@
     "stackable": false,
     "rarity": 5,
     "slug": "raygun",
-    "type":  2
+    "type":  4
   }
 ]
