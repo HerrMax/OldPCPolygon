@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class ToggleMenu : MonoBehaviour {
 
-    [HideInInspector] public Behaviour[] disableOnToggle;
+    public Behaviour[] disableOnToggle;
     [HideInInspector] public Sway sway;
     [HideInInspector] public WeaponShoot weapon;
     [SerializeField] public Text pickupText;
     [SerializeField] private GameObject crosshair;
     [SerializeField] private GameObject inventory;
     [SerializeField] private KeyCode inventoryKey = KeyCode.Tab;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
 
     void Update()
     {
-        if (Input.GetKeyDown(inventoryKey)) toggleMenu(inventory);
+        if (Input.GetKeyDown(inventoryKey) && pauseMenu.active == false) toggleMenu(inventory);
+        if (Input.GetKeyDown(pauseKey) && inventory.active == false) toggleMenu(pauseMenu);
     }
 
     public void toggleMenu(GameObject menu)
@@ -24,11 +27,9 @@ public class ToggleMenu : MonoBehaviour {
         sway.MenuOpen(!menu.activeSelf);
         menu.SetActive(!menu.activeSelf);
         crosshair.SetActive(!menu.activeSelf);
-        //inventory.active = !inventory.active;
-        //crosshair.active = !inventory.active;
         for (int i = 0; i < disableOnToggle.Length; i++)
         {
-            disableOnToggle[i].enabled = !inventory.activeSelf;
+            disableOnToggle[i].enabled = !menu.activeSelf;
         }
     }
 }
