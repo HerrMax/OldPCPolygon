@@ -41,8 +41,6 @@ public class PlayerSetup : NetworkBehaviour {
             toggleMenu.disableOnToggle = this.disableOnToggle;
             toggleMenu.sway = this.GetComponentInChildren<Sway>();
             toggleMenu.weapon = this.GetComponent<WeaponShoot>();
-
-            Cursor.lockState = CursorLockMode.Locked;
         }
 
         GetComponent<Player>().Setup();
@@ -90,8 +88,6 @@ public class PlayerSetup : NetworkBehaviour {
         }
 
         GameManager.DeregisterPlayer(transform.name);
-
-        Cursor.lockState = CursorLockMode.None;
     }
 
 }

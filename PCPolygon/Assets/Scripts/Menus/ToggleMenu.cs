@@ -31,7 +31,5 @@ public class ToggleMenu : MonoBehaviour {
         {
             disableOnToggle[i].enabled = !menu.activeSelf;
         }
-        if (!menu.active) Cursor.lockState = CursorLockMode.Locked;
-        else Cursor.lockState = CursorLockMode.None;
     }
 }
