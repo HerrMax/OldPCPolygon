@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Player))]
 public class PlayerSetup : NetworkBehaviour {
@@ -13,6 +14,8 @@ public class PlayerSetup : NetworkBehaviour {
 
     [SerializeField] GameObject playerUICanvas;
     [HideInInspector] public GameObject playerUIInstance;
+    [SerializeField] private Text playerText;
+    [SerializeField] private Pickup pickup;
 
     [SerializeField] string dontDrawLayer = "NoDraw";
     [SerializeField] GameObject playerGraphics;
@@ -31,6 +34,9 @@ public class PlayerSetup : NetworkBehaviour {
             playerUIInstance.name = transform.name + "'s UI";
 
             ToggleMenu toggleMenu = playerUIInstance.GetComponent<ToggleMenu>();
+
+            pickup.pickupText = toggleMenu.pickupText;
+            pickup.inventory = playerUIInstance.GetComponentInChildren<Inventory>();
 
             toggleMenu.disableOnToggle = this.disableOnToggle;
             toggleMenu.sway = this.GetComponentInChildren<Sway>();

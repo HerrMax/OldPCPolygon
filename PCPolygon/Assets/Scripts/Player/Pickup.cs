@@ -9,16 +9,18 @@ public class Pickup : MonoBehaviour {
     public Transform eyes;
     public KeyCode pickup = KeyCode.E;
     public Text pickupText;
-    public Text objectName;
+    public Inventory inventory;
     public AudioSource aS;
     public AudioClip equipSound;
+    public int itemID;
 
     void Update() {
         RaycastHit hit;
         if (Physics.Raycast(eyes.transform.position, eyes.transform.forward, out hit, pickupRange) && hit.transform.tag == "Item") {
-            pickupText.text = "Press " + pickup + " to pickup " + hit.transform.name;
+            pickupText.text = hit.transform.name + "[" + pickup + "]";
             if (Input.GetKeyDown(pickup)) {
-                //write pickup code here, the destroy meme will be temporary
+                itemID = hit.transform.GetComponent<ItemID>().itemID;
+                inventory.AddItem(itemID);
                 Destroy(hit.transform.gameObject);
                 aS.PlayOneShot(equipSound);
             }
@@ -26,15 +28,6 @@ public class Pickup : MonoBehaviour {
         else
         {
             pickupText.text = null;
-        }
-
-        if (Physics.Raycast(eyes.transform.position, eyes.transform.forward, out hit)) {
-            objectName.text = hit.transform.name;
-        }
-
-        else {
-            pickupText.text = "";
-            objectName.text = "Null";
-        }
+        }   
     }
 }

@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
     //Test code to test adding items
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        /*if (Input.GetKeyDown(KeyCode.A))
         {
             AddItem(3000);
         }
@@ -64,7 +64,7 @@ public class Inventory : MonoBehaviour
             AddItem(3002);
         }
         if (Input.GetKeyDown(KeyCode.Q))
-            DestroyItemById(3000);
+            DestroyItemById(3000);*/
     }
 
     /// <summary>

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToggleMenu : MonoBehaviour {
 
-    public Behaviour[] disableOnToggle;
-    public Sway sway;
-    public WeaponShoot weapon;
+    [HideInInspector] public Behaviour[] disableOnToggle;
+    [HideInInspector] public Sway sway;
+    [HideInInspector] public WeaponShoot weapon;
+    [SerializeField] public Text pickupText;
     [SerializeField] private GameObject crosshair;
     [SerializeField] private GameObject inventory;
     [SerializeField] private KeyCode inventoryKey = KeyCode.Tab;
