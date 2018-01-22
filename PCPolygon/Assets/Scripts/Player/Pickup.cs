@@ -18,7 +18,7 @@ public class Pickup : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(eyes.transform.position, eyes.transform.forward, out hit, pickupRange) && hit.transform.tag == "Item") {
             pickupText.text = hit.transform.GetComponent<ItemID>().itemName + " [" + pickup + "]";
-            if (Input.GetKeyDown(pickup) && inventory.items.Count < 20) {
+            if (Input.GetKeyDown(pickup) /*&& inventory.items.Count < 20*/) {
                 itemID = hit.transform.GetComponent<ItemID>().itemID;
                 inventory.AddItem(itemID);
                 Destroy(hit.transform.gameObject);
