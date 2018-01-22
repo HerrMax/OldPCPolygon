@@ -24,6 +24,7 @@ public class ToggleMenu : MonoBehaviour {
     {
         CanvasGroup menu = menuObject.GetComponent<CanvasGroup>();
 
+        pickupText.text = null;
         weapon.stopShooting();
         sway.MenuOpen(!menu.interactable);
         menu.alpha = Math.Abs(menu.alpha - 1);
