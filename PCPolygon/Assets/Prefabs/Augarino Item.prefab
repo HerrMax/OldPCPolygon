@@ -155,7 +155,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4904046520887714}
-  - component: {fileID: 95942493521737344}
   - component: {fileID: 65203456314445710}
   - component: {fileID: 54312248278932528}
   - component: {fileID: 114830336896395084}
@@ -1084,23 +1083,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.696022, z: 9.786861}
   m_Center: {x: 0, y: -0.00000059604645, z: -0.018239915}
---- !u!95 &95942493521737344
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1460281223784694}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9381d92d5e96f5445abd736463607e26, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114121252762010200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1113,7 +1095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.33333334
+  m_SendInterval: 0.16666667
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

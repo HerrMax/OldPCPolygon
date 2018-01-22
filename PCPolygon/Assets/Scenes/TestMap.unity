@@ -2833,10 +2833,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1486553699970004, guid: fe6c68389718c3a4782460242c431b74, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe6c68389718c3a4782460242c431b74, type: 2}
   m_IsPrefabParent: 0
@@ -3146,6 +3142,11 @@ Prefab:
     - target: {fileID: 1460281223784694, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39, type: 2}
       propertyPath: m_Name
       value: Augarino
+      objectReference: {fileID: 0}
+    - target: {fileID: 114121252762010200, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39,
+        type: 2}
+      propertyPath: m_SendInterval
+      value: 0.16666667
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39, type: 2}
@@ -3970,6 +3971,11 @@ Prefab:
     - target: {fileID: 1460281223784694, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39, type: 2}
       propertyPath: m_Name
       value: Augarino
+      objectReference: {fileID: 0}
+    - target: {fileID: 114121252762010200, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39,
+        type: 2}
+      propertyPath: m_SendInterval
+      value: 0.16666667
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39, type: 2}

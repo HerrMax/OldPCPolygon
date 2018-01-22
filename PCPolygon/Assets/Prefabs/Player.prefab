@@ -912,6 +912,7 @@ MonoBehaviour:
   disableOnToggle:
   - {fileID: 114327547946837190}
   - {fileID: 114866916607024734}
+  - {fileID: 114777350764847754}
   remoteLayer: Remote
   playerUICanvas: {fileID: 1486553699970004, guid: fe6c68389718c3a4782460242c431b74,
     type: 2}
