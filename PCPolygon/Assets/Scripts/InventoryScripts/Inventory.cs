@@ -42,8 +42,6 @@ public class Inventory : MonoBehaviour
             slots[i+5].GetComponent<ItemSlot>().id = i+5;
             slots[i+5].transform.SetParent(inventorySlotPanel.transform);
         }
-
-        
     }
 
     //Test code to test adding items
@@ -73,44 +71,39 @@ public class Inventory : MonoBehaviour
     /// <param name="id"></param>
     public void AddItem(int id)
     {
-        if(items.Count < 20)
+        Item itemToAdd = database.FetchItemByID(id);
+        //lazy kid system. not very good. if we ever do optimization we need to change this
+        if (itemToAdd.Stackable && DoesItemAlreadyExist(itemToAdd))
         {
-            Item itemToAdd = database.FetchItemByID(id);
-
-            //lazy kid system. not very good. if we ever do optimization we need to change this
-            if (itemToAdd.Stackable && DoesItemAlreadyExist(itemToAdd))
+            for (int i = 0; i < items.Count; i++)
             {
-                for (int i = 0; i < items.Count; i++)
+                if (items[i].ID == id)
                 {
-                    if (items[i].ID == id)
-                    {
-                        ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
-                        data.amount++;
-                        data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
-                        break;
-                    }
+                    ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
+                    data.amount++;
+                    data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                    break;
                 }
             }
-            else
+        }
+        else
+        {
+            for (int i = 0; i < items.Count; i++)
             {
-                for (int i = 0; i < items.Count; i++)
+                if (items[i].ID == -1 && (id <= itemToAdd.Type || id >= 5))
                 {
-                    if (items[i].ID == -1 && (id <= itemToAdd.Type || id >= 5))
-                    {
-                        items[i] = itemToAdd;
-                        GameObject itemObj = Instantiate(inventoryItem);
-                        itemObj.GetComponent<ItemData>().item = itemToAdd;
-                        itemObj.GetComponent<ItemData>().slot = i;
-                        itemObj.transform.SetParent(slots[i].transform);
-                        itemObj.transform.position = itemObj.transform.parent.position;
-                        itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
-                        itemObj.transform.parent.name = itemToAdd.Title;
-
-                        break;
-                    }
+                    items[i] = itemToAdd;
+                    GameObject itemObj = Instantiate(inventoryItem);
+                    itemObj.GetComponent<ItemData>().item = itemToAdd;
+                    itemObj.GetComponent<ItemData>().slot = i;
+                    itemObj.transform.SetParent(slots[i].transform);
+                    itemObj.transform.position = itemObj.transform.parent.position;
+                    itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
+                    itemObj.transform.parent.name = itemToAdd.Title;
+                    break;
                 }
             }
-        }       
+        }     
     }
 
     #region WIP
