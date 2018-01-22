@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,15 +20,19 @@ public class ToggleMenu : MonoBehaviour {
         if (Input.GetKeyDown(pauseKey) && inventory.activeSelf == false) toggleMenu(pauseMenu);
     }
 
-    public void toggleMenu(GameObject menu)
+    public void toggleMenu(GameObject menuObject)
     {
+        CanvasGroup menu = menuObject.GetComponent<CanvasGroup>();
+
         weapon.stopShooting();
-        sway.MenuOpen(!menu.activeSelf);
-        menu.SetActive(!menu.activeSelf);
-        crosshair.SetActive(!menu.activeSelf);
+        sway.MenuOpen(!menu.interactable);
+        menu.alpha = Math.Abs(menu.alpha - 1);
+        menu.blocksRaycasts = !menu.blocksRaycasts;
+        menu.interactable = !menu.interactable;
+        crosshair.SetActive(!menu.interactable);
         for (int i = 0; i < disableOnToggle.Length; i++)
         {
-            disableOnToggle[i].enabled = !menu.activeSelf;
+            disableOnToggle[i].enabled = !menu.interactable;
         }
     }
 }
