@@ -16,8 +16,8 @@ public class ToggleMenu : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(inventoryKey) && pauseMenu.activeSelf == false) toggleMenu(inventory);
-        if (Input.GetKeyDown(pauseKey) && inventory.activeSelf == false) toggleMenu(pauseMenu);
+        if (Input.GetKeyDown(inventoryKey) && pauseMenu.GetComponent<CanvasGroup>().alpha == 0) toggleMenu(inventory);
+        if (Input.GetKeyDown(pauseKey) && inventory.GetComponent<CanvasGroup>().alpha == 0) toggleMenu(pauseMenu);
     }
 
     public void toggleMenu(GameObject menuObject)
