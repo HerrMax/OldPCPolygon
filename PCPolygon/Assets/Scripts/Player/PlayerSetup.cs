@@ -20,7 +20,10 @@ public class PlayerSetup : NetworkBehaviour {
     [SerializeField] string dontDrawLayer = "NoDraw";
     [SerializeField] GameObject playerGraphics;
 
-	void Start () {
+    [SerializeField] [SyncVar] public int skinTone;
+    [SerializeField] private Material[] skinTones;
+
+    void Start () {
         if (!isLocalPlayer)
         {
             DisableComponents();
@@ -41,9 +44,19 @@ public class PlayerSetup : NetworkBehaviour {
             toggleMenu.disableOnToggle = this.disableOnToggle;
             toggleMenu.sway = this.GetComponentInChildren<Sway>();
             toggleMenu.weapon = this.GetComponent<WeaponShoot>();
+
+            skinTone = Random.Range(0, skinTones.Length);
         }
 
+        CmdSetSkinTone();
+
         GetComponent<Player>().Setup();
+    }
+
+    [Command]
+    void CmdSetSkinTone()
+    {
+        playerGraphics.GetComponent<Renderer>().material = skinTones[skinTone];
     }
 
     void SetLayerRecursively(GameObject obj, int newLayer)

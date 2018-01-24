@@ -195,7 +195,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630112132631432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2777023, y: -3.093672e-17, z: 6.9663296}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4580675403976224}
@@ -921,6 +921,12 @@ MonoBehaviour:
   pickup: {fileID: 114777350764847754}
   dontDrawLayer: NoDraw
   playerGraphics: {fileID: 1661796388103102}
+  skinTone: 0
+  skinTones:
+  - {fileID: 2100000, guid: 6005a64328bf8ba4f88f83b872639cf9, type: 2}
+  - {fileID: 2100000, guid: 6ec688be332985548a126bcb8c6c3169, type: 2}
+  - {fileID: 2100000, guid: 770be24832ec50c4fa41d549c2c9a516, type: 2}
+  - {fileID: 2100000, guid: db9155ea7cdcfd54ba571c6b03a3a0ef, type: 2}
 --- !u!114 &114866916607024734
 MonoBehaviour:
   m_ObjectHideFlags: 1
