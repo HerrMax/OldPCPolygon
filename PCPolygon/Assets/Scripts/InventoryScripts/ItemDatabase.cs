@@ -15,11 +15,7 @@ public class ItemDatabase : MonoBehaviour
         ConstructItemDatabase();
     }
 
-    /// <summary>
-    /// Locates an item in the inventory by its ID
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
+    //Locates an item by its ID
     public Item FetchItemByID(int id)
     {
         for (int i = 0; i < database.Count; i++)
@@ -30,9 +26,7 @@ public class ItemDatabase : MonoBehaviour
         return null;
     }
 
-    /// <summary>
-    /// Creates a database from the .json file
-    /// </summary>
+    //Creates a database from the .json
     void ConstructItemDatabase()
     {
         for (int i = 0; i < itemData.Count; i++)
