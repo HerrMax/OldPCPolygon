@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
     }
 
     /// <summary>
-    /// Adds an item to the inventory
+    /// Adds an item to the inventory by ID
     /// </summary>
     /// <param name="id"></param>
     public void AddItem(int id)
@@ -151,7 +151,11 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    //Tests to see if the item already exists.
+    /// <summary>
+    /// Test to see if an Item exists
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
     bool DoesItemAlreadyExist(Item item)
     {
         for (int i = 0; i < items.Count; i++)
