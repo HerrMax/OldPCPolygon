@@ -20,10 +20,15 @@ public class ToggleMenu : MonoBehaviour {
         if (Input.GetKeyDown(pauseKey) && inventory.GetComponent<CanvasGroup>().alpha == 0) toggleMenu(pauseMenu);
     }
 
+
+    /// <summary>
+    /// Toggles a menu
+    /// <para>Requires a CanvasGroup on the object</para>
+    /// </summary>
+    /// <param name="menuObject"></param>
     public void toggleMenu(GameObject menuObject)
     {
         CanvasGroup menu = menuObject.GetComponent<CanvasGroup>();
-
         pickupText.text = null;
         weapon.stopShooting();
         sway.MenuOpen(!menu.interactable);
@@ -34,6 +39,6 @@ public class ToggleMenu : MonoBehaviour {
         for (int i = 0; i < disableOnToggle.Length; i++)
         {
             disableOnToggle[i].enabled = !menu.interactable;
-        }
+        }     
     }
 }
