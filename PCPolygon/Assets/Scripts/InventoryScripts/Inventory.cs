@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.Networking;
 
 public class Inventory : MonoBehaviour
 {
@@ -107,17 +106,7 @@ public class Inventory : MonoBehaviour
         }     
     }
 
-    [Command]
-    public void CmdInstaniateByID(int id)
-    {
-        Item itemToInstantiate = database.FetchItemByID(id);
-        GameObject go = Instantiate(Resources.Load("Weapon Prefabs\\" + itemToInstantiate.Slug + ".prefab") as GameObject);
-        NetworkServer.Spawn(go);
-        Debug.Log("Spawned " + itemToInstantiate.Title);
-    }
-
     #region WIP
-    /*
     /// <summary>
     /// Used for destroying an entire stack of items
     /// </summary>
@@ -160,7 +149,6 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    */
     #endregion
 
     /// <summary>
