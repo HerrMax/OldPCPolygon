@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 114121252762010200}
   - component: {fileID: 114992635795098044}
   m_Layer: 8
-  m_Name: augarino
+  m_Name: Augarino Item
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

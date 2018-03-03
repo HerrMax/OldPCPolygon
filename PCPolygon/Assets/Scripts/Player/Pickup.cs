@@ -16,8 +16,9 @@ public class Pickup : NetworkBehaviour {
     public int itemID;
 
     void Update() {
-        if (!isLocalPlayer) { return; }
-
+        if (!isLocalPlayer)
+        { return; }
+        
         RaycastHit hit;
         if (Physics.Raycast(eyes.transform.position, eyes.transform.forward, out hit, pickupRange) && hit.transform.tag == "Item") {
             pickupText.text = hit.transform.GetComponent<ItemID>().itemName + " [" + pickup + "]";
@@ -34,6 +35,10 @@ public class Pickup : NetworkBehaviour {
     [Client]
     void OnPickup(GameObject hit)
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
 
         Debug.Log(this.transform.name + " pickup : " + hit.name);
         CmdPickup(hit);

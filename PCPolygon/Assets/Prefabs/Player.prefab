@@ -27,21 +27,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1172792704504118
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4142147982122246}
-  m_Layer: 0
-  m_Name: SpawnPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1463287710432206
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +115,6 @@ GameObject:
   - component: {fileID: 114327547946837190}
   - component: {fileID: 114297078824355824}
   - component: {fileID: 114777350764847754}
-  - component: {fileID: 114801439578695064}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -211,29 +195,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630112132631432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.437769, y: 2.0477061e-17, z: -4.6110244}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4580675403976224}
   - {fileID: 4694519624945074}
   - {fileID: 224733394073360636}
   - {fileID: 4856416540068650}
-  - {fileID: 4142147982122246}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4142147982122246
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1172792704504118}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4128661696939778}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4357749614320426
 Transform:
@@ -919,19 +889,6 @@ MonoBehaviour:
   aS: {fileID: 0}
   equipSound: {fileID: 0}
   itemID: 0
---- !u!114 &114801439578695064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630112132631432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2384a10e62a8f614286fcf3a28626a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPos: {fileID: 4142147982122246}
-  objToSpawn: {fileID: 1460281223784694, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39, type: 2}
 --- !u!114 &114843720543295022
 MonoBehaviour:
   m_ObjectHideFlags: 1
