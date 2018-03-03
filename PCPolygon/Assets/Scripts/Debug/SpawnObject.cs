@@ -10,7 +10,7 @@ public class SpawnObject : NetworkBehaviour {
 
     private void Update()
     {
-        if (!isLocalPlayer) { return; }
+        //if (!isLocalPlayer) { return; }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
