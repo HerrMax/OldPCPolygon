@@ -18,15 +18,6 @@ public class SpawnObject : NetworkBehaviour {
         }
     }
 
-    /*[Client]
-    void SpawnObj(GameObject obj)
-    {
-        GameObject go = Instantiate(obj, spawnPos);
-        NetworkServer.Spawn(go);
-        
-        go.transform.parent = null;
-    }*/
-
     [Command]
     void CmdSpawnObj()
     {
