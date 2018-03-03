@@ -49,9 +49,21 @@ public class Inventory : MonoBehaviour
     //Test code to test adding items
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             drop.DropItem("augarino");
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            drop.DropItem("knife");
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            drop.DropItem("matteson");
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            drop.DropItem("raygun");
         }
         /*if (Input.GetKeyDown(KeyCode.A))
         {

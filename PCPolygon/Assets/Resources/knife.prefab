@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4006719385775516}
   - component: {fileID: 33854889375707684}
   - component: {fileID: 23846349658134370}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4124161989161356}
   - component: {fileID: 33268426402015178}
   - component: {fileID: 23867041935147526}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114641954570465472}
   - component: {fileID: 114151367465794982}
   - component: {fileID: 114488630533654244}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: knife
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4622515677276148}
   - component: {fileID: 33917025312311042}
   - component: {fileID: 23587074256547888}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4407447724620528}
   - component: {fileID: 33198850708399678}
   - component: {fileID: 23475921797305532}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,8 +357,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8914122, y: 1.2326831, z: 9.671277}
-  m_Center: {x: 1.5187871e-15, y: -0.34902668, z: -0.8942798}
+  m_Size: {x: 1.0037793, y: 2.7570252, z: 10.116709}
+  m_Center: {x: 2.5015896e-15, y: -0.2526638, z: -0.8506822}
 --- !u!114 &114151367465794982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemID: 3003
-  itemName: knife
+  itemName: Knife
 --- !u!114 &114641954570465472
 MonoBehaviour:
   m_ObjectHideFlags: 1

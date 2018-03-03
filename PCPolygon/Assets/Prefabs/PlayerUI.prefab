@@ -564,6 +564,7 @@ MonoBehaviour:
   inventoryItem: {fileID: 1116255625557810, guid: dd2aad9c9ddde834fbc0d4b9547c4fe2,
     type: 2}
   slots: []
+  drop: {fileID: 0}
 --- !u!114 &114294199959905474
 MonoBehaviour:
   m_ObjectHideFlags: 1

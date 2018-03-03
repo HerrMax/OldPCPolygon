@@ -84,6 +84,9 @@ MonoBehaviour:
   m_OnlineScene: TestMap
   m_SpawnPrefabs:
   - {fileID: 1460281223784694, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39, type: 2}
+  - {fileID: 1525277284071974, guid: 338939c518784d3479fdc64071c19db6, type: 2}
+  - {fileID: 1139859749311204, guid: e97b822dbec2ec44a871f15bcb4a8120, type: 2}
+  - {fileID: 1363236115922688, guid: 30742f7b4a7a5b54798c985a51fa944d, type: 2}
   m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:

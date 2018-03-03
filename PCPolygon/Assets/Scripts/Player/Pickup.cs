@@ -31,6 +31,27 @@ public class Pickup : NetworkBehaviour {
         }   
     }
 
+    /*public void OnPickup(GameObject hit)
+    {
+        itemID = hit.transform.GetComponent<ItemID>().itemID;
+        inventory.AddItem(itemID);
+        Debug.Log(this.transform.name + " pickup : " + hit.name);
+        CmdDestroyItem(hit);
+    }
+
+    [Command]
+    void CmdDestroyItem(GameObject hit)
+    {
+        RpcDestroyItem(hit);
+    }
+
+    [ClientRpc]
+    void RpcDestroyItem(GameObject hit)
+    {
+        NetworkServer.Destroy(hit);
+    }*/
+
+    
     [Client]
     void OnPickup(GameObject hit)
     {
