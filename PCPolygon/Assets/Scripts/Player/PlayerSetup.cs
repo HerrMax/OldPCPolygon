@@ -45,6 +45,8 @@ public class PlayerSetup : NetworkBehaviour {
             toggleMenu.sway = this.GetComponentInChildren<Sway>();
             toggleMenu.weapon = this.GetComponent<WeaponShoot>();
 
+            playerUIInstance.GetComponentInChildren<Inventory>().drop = GetComponent<Drop>();
+
             skinTone = Random.Range(0, skinTones.Length);
         }
 

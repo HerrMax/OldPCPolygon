@@ -179,8 +179,6 @@ GameObject:
   - component: {fileID: 114198656209483620}
   - component: {fileID: 114287193608951588}
   - component: {fileID: 114747957324280356}
-  - component: {fileID: 114790081318831222}
-  - component: {fileID: 114452909583699628}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Inventory
@@ -695,38 +693,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114452909583699628
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1481565757466404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 254
-    i1: 108
-    i2: 104
-    i3: 56
-    i4: 151
-    i5: 24
-    i6: 195
-    i7: 164
-    i8: 120
-    i9: 36
-    i10: 96
-    i11: 36
-    i12: 44
-    i13: 67
-    i14: 27
-    i15: 116
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114526726863665510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -980,19 +946,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 1599161415535632}
---- !u!114 &114790081318831222
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1481565757466404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2384a10e62a8f614286fcf3a28626a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPos: {fileID: 4918749217781062}
-  objToSpawn: {fileID: 1460281223784694, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39, type: 2}
 --- !u!114 &114798072560896400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1184,7 +1137,7 @@ MonoBehaviour:
     i14: 27
     i15: 116
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114892504983224644
 MonoBehaviour:
   m_ObjectHideFlags: 1

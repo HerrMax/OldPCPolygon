@@ -45,5 +45,21 @@
     "rarity": 5,
     "slug": "raygun",
     "type":  4
+  },
+  {
+    "id": 3003,
+    "title": "Knife",
+    "stats": {
+      "damage": 40,
+      "range": 3,
+      "rateOfFire": 1,
+      "magSize": 0
+    },
+    "description": "Chop chop.",
+    "stackable": false,
+    "rarity": 1,
+    "slug": "knife",
+    "type":  3
   }
+
 ]

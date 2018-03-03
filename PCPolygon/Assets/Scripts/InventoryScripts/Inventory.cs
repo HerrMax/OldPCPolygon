@@ -17,6 +17,8 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
+    public Drop drop;
+
     //Sets up basic system for items to go in
     void Start()
     {
@@ -47,6 +49,10 @@ public class Inventory : MonoBehaviour
     //Test code to test adding items
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            drop.DropItem("augarino");
+        }
         /*if (Input.GetKeyDown(KeyCode.A))
         {
             AddItem(3000);
