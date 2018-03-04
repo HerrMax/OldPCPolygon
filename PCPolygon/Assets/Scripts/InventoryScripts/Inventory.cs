@@ -63,7 +63,7 @@ public class Inventory : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
-            drop.DropItem("raygun");
+            drop.DropItem("stone");
         }
         /*if (Input.GetKeyDown(KeyCode.A))
         {
