@@ -29,7 +29,7 @@
       "magSize": 30
     },
     "description": "An all round decent assault rifle",
-    "stackable": true, // Just for testing. Change to false later
+    "stackable": false,
     "rarity": 0, //For spawning stuff in. Setting all values to 0 so we need to change it later
     "slug": "augarino",
     "type":  1
