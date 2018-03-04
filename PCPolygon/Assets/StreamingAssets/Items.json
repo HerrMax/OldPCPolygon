@@ -11,7 +11,7 @@
       "magSize": 0
     },
     "description": "I get a lot of this in the morning",
-    "stackable": false,
+    "stackable": true,
     "rarity": 1,
     "slug": "wood",
     "type":  3
@@ -26,7 +26,7 @@
       "magSize": 0
     },
     "description": "Harder than [my] wood",
-    "stackable": false,
+    "stackable": true,
     "rarity": 1,
     "slug": "stone",
     "type":  3
