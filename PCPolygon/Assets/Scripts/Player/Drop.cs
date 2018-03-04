@@ -16,9 +16,10 @@ public class Drop : NetworkBehaviour {
     [Command]
     void CmdDropItem(string slug)
     {
-        GameObject go = (GameObject)Instantiate(Resources.Load(slug), dropPos);
+        //GameObject go = (GameObject)Instantiate(Resources.Load(slug), dropPos);
+        GameObject go = (GameObject)Instantiate(Resources.Load(slug), transform);
         go.transform.parent = null;
-        go.GetComponent<Rigidbody>().AddRelativeForce(0,0,1000);
+        //go.GetComponent<Rigidbody>().AddRelativeForce(0,0,200);
         NetworkServer.Spawn(go);
         //Debug.Log("Spawned " + go.transform.name);
     }
