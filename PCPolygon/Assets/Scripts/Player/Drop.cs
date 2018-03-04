@@ -19,6 +19,6 @@ public class Drop : NetworkBehaviour {
         GameObject go = (GameObject)Instantiate(Resources.Load(slug), dropPos);
         go.transform.parent = null;
         NetworkServer.Spawn(go);
-        Debug.Log("Spawned " + go.transform.name);
+        //Debug.Log("Spawned " + go.transform.name);
     }
 }

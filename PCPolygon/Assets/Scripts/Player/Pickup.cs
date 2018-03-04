@@ -56,7 +56,7 @@ public class Pickup : NetworkBehaviour {
     void OnPickup(GameObject hit)
     {
 
-        Debug.Log(this.transform.name + " pickup : " + hit.name);
+        //Debug.Log(this.transform.name + " pickup : " + hit.name);
         CmdPickup(hit);
         NetworkServer.Destroy(hit.transform.gameObject);
         itemID = hit.transform.GetComponent<ItemID>().itemID;

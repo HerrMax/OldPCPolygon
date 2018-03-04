@@ -24,6 +24,6 @@ public class SpawnObject : NetworkBehaviour {
         GameObject go = Instantiate(objToSpawn, spawnPos);
         go.transform.parent = null;
         NetworkServer.Spawn(go);
-        Debug.Log("Spawned " + go.transform.name);
+        //Debug.Log("Spawned " + go.transform.name);
     }
 }

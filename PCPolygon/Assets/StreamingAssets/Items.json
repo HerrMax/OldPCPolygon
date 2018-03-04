@@ -2,6 +2,36 @@
   // 0 = resource, 1 = consumable, 2 = ammo, 3 = weapon
   //Types: 0 - Primary; 1 - Secondary; 4 - Other
   {
+    "id": 1,
+    "title": "Wood",
+    "stats": {
+      "damage": 0,
+      "range": 0,
+      "rateOfFire": 0,
+      "magSize": 0
+    },
+    "description": "I get a lot of this in the morning",
+    "stackable": false,
+    "rarity": 1,
+    "slug": "wood",
+    "type":  3
+  }, 
+  {
+    "id": 2,
+    "title": "Stone",
+    "stats": {
+      "damage": 0,
+      "range": 0,
+      "rateOfFire": 0,
+      "magSize": 0
+    },
+    "description": "Harder than [my] wood",
+    "stackable": false,
+    "rarity": 1,
+    "slug": "stone",
+    "type":  3
+  },
+  {
     "id": 3000,
     "title": "Augarino",
     "stats": {
@@ -61,5 +91,4 @@
     "slug": "knife",
     "type":  3
   }
-
 ]

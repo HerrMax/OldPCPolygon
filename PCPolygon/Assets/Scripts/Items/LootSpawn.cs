@@ -20,6 +20,6 @@ public class LootSpawn : NetworkBehaviour {
     {
         GameObject go = Instantiate(itemToSpawn, this.transform);
         NetworkServer.Spawn(go);
-        Debug.Log("Spawned " + itemToSpawn.transform.name);
+        //Debug.Log("Spawned " + itemToSpawn.transform.name);
     }
 }
