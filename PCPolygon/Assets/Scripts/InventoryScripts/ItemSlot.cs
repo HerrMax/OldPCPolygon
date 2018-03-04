@@ -26,16 +26,19 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             else if (droppedItem.slot != id)
             {
                 Transform item = transform.GetChild(0);
-                item.GetComponent<ItemData>().slot = droppedItem.slot;
-                item.transform.SetParent(inv.slots[droppedItem.slot].transform);
-                item.transform.position = inv.slots[droppedItem.slot].transform.position;
-                        
-                inv.items[droppedItem.slot] = item.GetComponent<ItemData>().item;
-                inv.items[id] = droppedItem.item;
+                if (droppedItem.slot <= item.GetComponent<ItemData>().item.Type || droppedItem.slot >= 5)
+                {
+                    item.GetComponent<ItemData>().slot = droppedItem.slot;
+                    item.transform.SetParent(inv.slots[droppedItem.slot].transform);
+                    item.transform.position = inv.slots[droppedItem.slot].transform.position;
 
-                droppedItem.slot = id;
-                droppedItem.transform.SetParent(transform);
-                droppedItem.transform.position = transform.position;
+                    inv.items[droppedItem.slot] = item.GetComponent<ItemData>().item;
+                    inv.items[id] = droppedItem.item;
+
+                    droppedItem.slot = id;
+                    droppedItem.transform.SetParent(transform);
+                    droppedItem.transform.position = transform.position;
+                }
             }
         }
     }
