@@ -21,7 +21,7 @@ public class Pickup : NetworkBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(eyes.transform.position, eyes.transform.forward, out hit, pickupRange) && hit.transform.tag == "Item") {
             pickupText.text = hit.transform.GetComponent<ItemID>().itemName + " [" + pickup + "]";
-            if (Input.GetKeyDown(pickup) /*&& inventory.items.Count < 20*/) {
+            if (Input.GetKeyDown(pickup)) {
                 OnPickup(hit.transform.gameObject);
             }
         }
@@ -55,12 +55,14 @@ public class Pickup : NetworkBehaviour {
     [Client]
     void OnPickup(GameObject hit)
     {
-
-        //Debug.Log(this.transform.name + " pickup : " + hit.name);
-        CmdPickup(hit);
-        NetworkServer.Destroy(hit.transform.gameObject);
         itemID = hit.transform.GetComponent<ItemID>().itemID;
-        inventory.AddItem(itemID);
+        if (inventory.Addable(itemID) == true)
+        {
+            //Debug.Log(this.transform.name + " pickup : " + hit.name);
+            CmdPickup(hit);
+            NetworkServer.Destroy(hit.transform.gameObject);
+            inventory.AddItem(itemID);
+        }
     }
 
     [Command]

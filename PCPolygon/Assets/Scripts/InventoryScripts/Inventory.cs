@@ -121,8 +121,34 @@ public class Inventory : MonoBehaviour
                     break;
                 }
             }
-        }     
+        }
     }
+
+    public bool Addable(int id)
+    { 
+        Item itemToAdd = database.FetchItemByID(id);
+        if (itemToAdd.Stackable && DoesItemAlreadyExist(itemToAdd))
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].ID == id)
+                {
+                    return true;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].ID == -1 && (id <= itemToAdd.Type || id >= 5))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    } 
 
     #region WIP
     /// <summary>
