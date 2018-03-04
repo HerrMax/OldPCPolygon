@@ -17,7 +17,12 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
         if(id <= droppedItem.item.Type || id >= 5)
         {
-            if (inv.items[id].ID == -1)
+            if(id == 69)
+            {
+                inv.drop.DropItem(droppedItem.item.Slug);
+                Destroy(droppedItem.transform.parent);
+            }
+            else if (inv.items[id].ID == -1)
             {
                 inv.items[droppedItem.slot] = new Item();
                 inv.items[id] = droppedItem.item;
