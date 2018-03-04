@@ -37,11 +37,11 @@ public class Tooltip : MonoBehaviour
     {
         if (item.RateOfFire == 0)
         {
-            data = "<b>" + item.Title + "</b>\n\n" + item.Description;
+            data = "<b>" + item.Title + "</b>\n" + item.Description;
         }
         else
         {
-            data = "<b>" + item.Title + "</b>\n\n" + item.Description + "\n\n<b>Stats:</b>\n\nDamage:\t\t\t\t" + item.Damage + "\nRange:\t\t\t\t\t" + item.Range + "\nRate of Fire:\t\t\t" + item.RateOfFire + "\nMagazine Size:\t" + item.MagSize;
+            data = "<b>" + item.Title + "</b>\n" + item.Description + "\n\n<b>Stats:</b>\nDamage:\t\t\t\t" + item.Damage + "\nRange:\t\t\t\t\t" + item.Range + "\nRate of Fire:\t\t\t" + item.RateOfFire + "\nMagazine Size:\t" + item.MagSize;
         }
         tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
     }
