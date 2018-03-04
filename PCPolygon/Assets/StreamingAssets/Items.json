@@ -40,7 +40,7 @@
       "rateOfFire": 1,
       "magSize": 1
     },
-    "description": "Pew pew daddy.",
+    "description": "Pew pew daddy",
     "stackable": false,
     "rarity": 5,
     "slug": "raygun",
@@ -55,7 +55,7 @@
       "rateOfFire": 1,
       "magSize": 0
     },
-    "description": "Chop chop.",
+    "description": "Chop chop",
     "stackable": false,
     "rarity": 1,
     "slug": "knife",

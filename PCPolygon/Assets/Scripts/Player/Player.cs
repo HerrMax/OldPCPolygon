@@ -40,12 +40,25 @@ public class Player : NetworkBehaviour {
 
     private void Update()
     {
-        if (!isLocalPlayer) return;
+        if (!isLocalPlayer) { return; }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            RpcTakeDamage(maxHealth);
+            if (isServer)
+            {
+                RpcTakeDamage(maxHealth);
+            }
+            else
+            {
+                CmdTakeDamage(maxHealth);
+            }
         }
+    }
+
+    [Command]
+    public void CmdTakeDamage(float amount)
+    {
+        RpcTakeDamage(maxHealth);
     }
 
     [ClientRpc]
