@@ -4,6 +4,12 @@
   {
     "id": 1,
     "title": "Wood",
+    "stats": {
+      "damage": 0,
+      "range": 0,
+      "rateOfFire": 0,
+      "magSize": 0
+    },
     "description": "I get a lot of this in the morning",
     "stackable": true,
     "rarity": 1,
@@ -13,6 +19,12 @@
   {
     "id": 2,
     "title": "Stone",
+    "stats": {
+      "damage": 0,
+      "range": 0,
+      "rateOfFire": 0,
+      "magSize": 0
+    },
     "description": "Harder than [my] wood",
     "stackable": true,
     "rarity": 1,
@@ -29,6 +41,7 @@
       "magSize": 30
     },
     "description": "An all round decent assault rifle",
+    "stackable": true, // Just for testing. Change to false later
     "rarity": 0, //For spawning stuff in. Setting all values to 0 so we need to change it later
     "slug": "augarino",
     "type":  1
