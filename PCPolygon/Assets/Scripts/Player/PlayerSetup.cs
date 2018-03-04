@@ -29,7 +29,7 @@ public class PlayerSetup : NetworkBehaviour {
             DisableComponents();
             AssignRemoteLayer();
         }
-        else
+        if (isLocalPlayer)
         {
             SetLayerRecursively(playerGraphics, LayerMask.NameToLayer(dontDrawLayer));
 
@@ -48,17 +48,10 @@ public class PlayerSetup : NetworkBehaviour {
             playerUIInstance.GetComponentInChildren<Inventory>().drop = GetComponent<Drop>();
 
             skinTone = Random.Range(0, skinTones.Length);
+            //playerGraphics.GetComponent<Renderer>().material = skinTones[skinTone];
         }
 
-        CmdSetSkinTone();
-
         GetComponent<Player>().Setup();
-    }
-
-    [Command]
-    void CmdSetSkinTone()
-    {
-        playerGraphics.GetComponent<Renderer>().material = skinTones[skinTone];
     }
 
     void SetLayerRecursively(GameObject obj, int newLayer)
