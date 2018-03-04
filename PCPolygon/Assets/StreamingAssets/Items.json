@@ -4,12 +4,6 @@
   {
     "id": 1,
     "title": "Wood",
-    "stats": {
-      "damage": 0,
-      "range": 0,
-      "rateOfFire": 0,
-      "magSize": 0
-    },
     "description": "I get a lot of this in the morning",
     "stackable": true,
     "rarity": 1,
@@ -19,12 +13,6 @@
   {
     "id": 2,
     "title": "Stone",
-    "stats": {
-      "damage": 0,
-      "range": 0,
-      "rateOfFire": 0,
-      "magSize": 0
-    },
     "description": "Harder than [my] wood",
     "stackable": true,
     "rarity": 1,

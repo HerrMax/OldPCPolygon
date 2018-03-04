@@ -35,7 +35,14 @@ public class Tooltip : MonoBehaviour
 
     public void ConstructDataString()
     {
-        data = "<b>" + item.Title + "</b>\n\n" + item.Description + "\n\n<b>Stats:</b>\n\nDamage:\t\t\t\t" + item.Damage + "\nRange:\t\t\t\t\t" + item.Range + "\nRate of Fire:\t\t\t" + item.RateOfFire + "\nMagazine Size:\t" + item.MagSize;
+        if (item.RateOfFire == 0)
+        {
+            data = "<b>" + item.Title + "</b>\n\n" + item.Description;
+        }
+        else
+        {
+            data = "<b>" + item.Title + "</b>\n\n" + item.Description + "\n\n<b>Stats:</b>\n\nDamage:\t\t\t\t" + item.Damage + "\nRange:\t\t\t\t\t" + item.Range + "\nRate of Fire:\t\t\t" + item.RateOfFire + "\nMagazine Size:\t" + item.MagSize;
+        }
         tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
     }
 }

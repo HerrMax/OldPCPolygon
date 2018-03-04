@@ -37,7 +37,15 @@ public class ItemDatabase : MonoBehaviour
     {
         for (int i = 0; i < itemData.Count; i++)
         {
-            database.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), (int)itemData[i]["stats"]["damage"], (int)itemData[i]["stats"]["range"], (int)itemData[i]["stats"]["rateOfFire"], (int)itemData[i]["stats"]["magSize"], itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString(), (int)itemData[i]["type"]));
+            try
+            {
+                database.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), (int)itemData[i]["stats"]["damage"], (int)itemData[i]["stats"]["range"], (int)itemData[i]["stats"]["rateOfFire"], (int)itemData[i]["stats"]["magSize"], itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString(), (int)itemData[i]["type"]));
+            }
+            catch
+            {
+                database.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString(), (int)itemData[i]["type"]));
+            }
+            
         }
     }
 }
@@ -68,6 +76,18 @@ public class Item
         Range = range;
         RateOfFire = rateOfFire;
         MagSize = magsize;
+        Description = description;
+        Stackable = stackable;
+        Rarity = rarity;
+        Slug = slug;
+        Sprite = Resources.Load<Sprite>("InventorySprites/Icons/" + slug);
+        Type = type;
+    }
+
+    public Item(int id, string title, string description, bool stackable, int rarity, string slug, int type)
+    {
+        ID = id;
+        Title = title;
         Description = description;
         Stackable = stackable;
         Rarity = rarity;
