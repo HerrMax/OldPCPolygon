@@ -8,8 +8,8 @@
     "stackable": true,
     "rarity": 1,
     "slug": "wood",
-    "type":  3
-  }, 
+    "type": 3
+  },
   {
     "id": 2,
     "title": "Stone",
@@ -17,7 +17,7 @@
     "stackable": true,
     "rarity": 1,
     "slug": "stone",
-    "type":  3
+    "type": 3
   },
   {
     "id": 3000,
@@ -32,7 +32,7 @@
     "stackable": false,
     "rarity": 0, //For spawning stuff in. Setting all values to 0 so we need to change it later
     "slug": "augarino",
-    "type":  1
+    "type": 1
   },
   {
     "id": 3001,
@@ -47,7 +47,7 @@
     "stackable": false,
     "rarity": 0,
     "slug": "matteson",
-    "type":  0
+    "type": 0
   },
   {
     "id": 3002,
@@ -62,7 +62,7 @@
     "stackable": false,
     "rarity": 5,
     "slug": "raygun",
-    "type":  4
+    "type": 4
   },
   {
     "id": 3003,
@@ -70,13 +70,28 @@
     "stats": {
       "damage": 40,
       "range": 3,
+      "rateOfFire": 2,
+      "magSize": 0
+    },
+    "description": "Cut cut",
+    "stackable": false,
+    "rarity": 1,
+    "slug": "knife",
+    "type": 3
+  },
+  {
+    "id": 3004,
+    "title": "Hatchet",
+    "stats": {
+      "damage": 60,
+      "range": 5,
       "rateOfFire": 1,
       "magSize": 0
     },
     "description": "Chop chop",
     "stackable": false,
     "rarity": 1,
-    "slug": "knife",
-    "type":  3
+    "slug": "hatchet",
+    "type": 3
   }
 ]
