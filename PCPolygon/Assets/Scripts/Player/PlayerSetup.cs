@@ -2,21 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Player))]
 public class PlayerSetup : NetworkBehaviour {
 
     [SerializeField] Behaviour[] componentsToDisable;
+    [SerializeField] Behaviour[] disableOnToggle;
 
     [SerializeField] string remoteLayer = "Remote";
 
     [SerializeField] GameObject playerUICanvas;
     [HideInInspector] public GameObject playerUIInstance;
+    [SerializeField] private Text playerText;
+    [SerializeField] private Pickup pickup;
 
     [SerializeField] string dontDrawLayer = "NoDraw";
     [SerializeField] GameObject playerGraphics;
 
-	void Start () {
+    [SerializeField] [SyncVar] public int skinTone;
+    [SerializeField] private Material[] skinTones;
+
+    void Start () {
         if (!isLocalPlayer)
         {
             DisableComponents();
@@ -28,9 +35,30 @@ public class PlayerSetup : NetworkBehaviour {
 
             playerUIInstance = Instantiate(playerUICanvas);
             playerUIInstance.name = transform.name + "'s UI";
+
+            ToggleMenu toggleMenu = playerUIInstance.GetComponent<ToggleMenu>();
+
+            pickup.pickupText = toggleMenu.pickupText;
+            pickup.inventory = playerUIInstance.GetComponentInChildren<Inventory>();
+
+            toggleMenu.disableOnToggle = this.disableOnToggle;
+            toggleMenu.sway = this.GetComponentInChildren<Sway>();
+            toggleMenu.weapon = this.GetComponent<WeaponShoot>();
+
+            playerUIInstance.GetComponentInChildren<Inventory>().drop = GetComponent<Drop>();
+
+            skinTone = Random.Range(0, skinTones.Length);
         }
 
+        CmdSetSkinTone();
+
         GetComponent<Player>().Setup();
+    }
+
+    [Command]
+    void CmdSetSkinTone()
+    {
+        playerGraphics.GetComponent<Renderer>().material = skinTones[skinTone];
     }
 
     void SetLayerRecursively(GameObject obj, int newLayer)

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
         if (singleton != null) return;
 
         singleton = this;
+        Keycodes.GetKeycodes();
     }
 
     public void SetSceneCameraActive (bool isActive)

@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerSetup))]
 public class Player : NetworkBehaviour {
+
+    [SerializeField] private Slider healthbar;
 
     [SyncVar]
     private bool _isDead = false;
@@ -36,16 +39,46 @@ public class Player : NetworkBehaviour {
         }
 
         setDefaults();
+
+        healthbar = GameObject.Find(gameObject.name + "'s UI").transform.GetChild(6).GetComponent<Slider>();
+        healthbar.value = CalculateHealth();
     }
 
     private void Update()
     {
-        if (!isLocalPlayer) return;
+        if (!isLocalPlayer) { return; }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            RpcTakeDamage(maxHealth);
+            if (isServer)
+            {
+                RpcTakeDamage(maxHealth);
+            }
+            else
+            {
+                CmdTakeDamage(maxHealth);
+            }
         }
+        //For testing
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (isServer)
+            {
+                RpcTakeDamage(20);
+                Debug.Log("Player.cs Line 63-75");
+            }
+            else
+            {
+                CmdTakeDamage(20);
+                Debug.Log("Player.cs Line 63-75");
+            }
+        }
+    }
+
+    [Command]
+    public void CmdTakeDamage(float amount)
+    {
+        RpcTakeDamage(maxHealth);
     }
 
     [ClientRpc]
@@ -54,6 +87,7 @@ public class Player : NetworkBehaviour {
         if (isDead) return;
 
         currentHealth -= amount;
+        healthbar.value = CalculateHealth();
 
         Debug.Log(transform.name + " now has " + currentHealth + " health.");
 
@@ -106,6 +140,7 @@ public class Player : NetworkBehaviour {
         yield return new WaitForSeconds(0.1f);
 
         setDefaults();
+        healthbar.value = CalculateHealth();
 
         Debug.Log(transform.name + " has respawned.");
     }
@@ -133,7 +168,11 @@ public class Player : NetworkBehaviour {
         {
             GameManager.singleton.SetSceneCameraActive(false);
             GetComponent<PlayerSetup>().playerUIInstance.SetActive(true);
-            MenuManager.SetupOtherSceneButtons();
         }
+    }
+
+    float CalculateHealth()
+    {
+        return currentHealth / maxHealth;
     }
 }

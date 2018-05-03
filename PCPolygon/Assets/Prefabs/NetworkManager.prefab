@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4423446093679916}
   - component: {fileID: 114706051793439574}
+  - component: {fileID: 114059177851760692}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -40,6 +41,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114059177851760692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1396830228838680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 227461547, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  showGUI: 1
+  offsetX: 0
+  offsetY: 0
 --- !u!114 &114706051793439574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -48,7 +64,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1396830228838680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 818fca2b6c9d65c4389c47dc400b9709, type: 3}
+  m_Script: {fileID: 11500000, guid: eff6530b8e1d48540a2adcb3216855a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_NetworkPort: 7777
@@ -66,7 +82,15 @@ MonoBehaviour:
   m_PlayerSpawnMethod: 1
   m_OfflineScene: Menu
   m_OnlineScene: TestMap
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 1460281223784694, guid: 9ae3c06c1c8476c42bfa5e9d44cb0b39, type: 2}
+  - {fileID: 1525277284071974, guid: 338939c518784d3479fdc64071c19db6, type: 2}
+  - {fileID: 1139859749311204, guid: e97b822dbec2ec44a871f15bcb4a8120, type: 2}
+  - {fileID: 1363236115922688, guid: 30742f7b4a7a5b54798c985a51fa944d, type: 2}
+  - {fileID: 1263820266716348, guid: 43d732d70529e0e4f861bb3f46589724, type: 2}
+  - {fileID: 1165737743376212, guid: c0962bd8560d4604cb821522d40d9d31, type: 2}
+  - {fileID: 1374177871284740, guid: ce2428f47474a9e42b6c90c0e131f210, type: 2}
+  - {fileID: 1779783212365712, guid: 274d22caa1c5bec479dbc8459e234364, type: 2}
   m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:

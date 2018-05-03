@@ -37,9 +37,14 @@ public class WeaponShoot : NetworkBehaviour {
                 InvokeRepeating("Shoot", 0f, 1f/currentWeapon.rateOfFire);
             }else if (Input.GetKeyUp(shoot))
             {
-                CancelInvoke("Shoot");
+                stopShooting();
             }
         }
+    }
+
+    public void stopShooting()
+    {
+        CancelInvoke("Shoot");
     }
 
     [Command]
