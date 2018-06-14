@@ -82,6 +82,30 @@ public class Player : NetworkBehaviour {
                 Debug.Log("Player.cs Line 63-75");
             }
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            StartCoroutine(SlowDamage(50));
+        }
+    }
+
+    IEnumerator SlowDamage(int time)
+    {
+        for (int i = 0; i <= 2*time; i++)
+        {
+            if(currentHealth > 0)
+            {
+                if (isServer)
+                {
+                    RpcTakeDamage(1);
+                    yield return new WaitForSeconds(0.5f);
+                }
+                else
+                {
+                    CmdTakeDamage(1);
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
+        }
     }
 
     [Command]
