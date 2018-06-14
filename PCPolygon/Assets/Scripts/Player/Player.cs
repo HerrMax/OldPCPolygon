@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
+#pragma warning disable 0618
+
 [RequireComponent(typeof(PlayerSetup))]
 public class Player : NetworkBehaviour {
 
     [SerializeField] private Slider healthbar;
+    [SerializeField] private Text healthbarText;
 
     [SyncVar]
     private bool _isDead = false;
@@ -40,8 +43,14 @@ public class Player : NetworkBehaviour {
 
         setDefaults();
 
-        healthbar = GameObject.Find(gameObject.name + "'s UI").transform.GetChild(6).GetComponent<Slider>();
+        //healthbar = GameObject.Find(gameObject.name + "'s UI").transform.GetChild(6).GetComponent<Slider>();
+        //healthbar = GetComponent<PlayerSetup>().playerUIInstance.GetComponentInChildren<Slider>();
+        //healthbar = GetComponent<PlayerSetup>().playerUIInstance.transform.GetChild(6).GetComponent<Slider>();
+
+        healthbar = GetComponent<PlayerSetup>().playerUIInstance.transform.FindChild("HealthBar").GetComponent<Slider>();
+        healthbarText = healthbar.GetComponentInChildren<Text>();
         healthbar.value = CalculateHealth();
+        healthbarText.text = " + " + currentHealth;
     }
 
     private void Update()
@@ -88,6 +97,7 @@ public class Player : NetworkBehaviour {
 
         currentHealth -= amount;
         healthbar.value = CalculateHealth();
+        healthbarText.text = " + " + currentHealth;
 
         Debug.Log(transform.name + " now has " + currentHealth + " health.");
 
@@ -141,6 +151,7 @@ public class Player : NetworkBehaviour {
 
         setDefaults();
         healthbar.value = CalculateHealth();
+        healthbarText.text = " + " + currentHealth;
 
         Debug.Log(transform.name + " has respawned.");
     }
