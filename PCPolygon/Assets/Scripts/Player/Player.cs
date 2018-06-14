@@ -84,24 +84,36 @@ public class Player : NetworkBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
-            StartCoroutine(SlowDamage(50));
+            PoisonPlayer(50,2);
         }
     }
 
-    IEnumerator SlowDamage(int time)
+    /// <summary>
+    /// A method that damages the player over time
+    /// </summary>
+    /// <param name="time">The amount of time to damage the player for</param>
+    /// <param name="DPS">The amount of damage to deal to the player every second</param>
+    void PoisonPlayer(int time, int DPS)
     {
+        StartCoroutine(SlowDamage(time, DPS));
+    }
+
+    IEnumerator SlowDamage(int time, int DPS)
+    {
+        float damage = DPS / 2;
+
         for (int i = 0; i <= 2*time; i++)
         {
             if(currentHealth > 0)
             {
                 if (isServer)
                 {
-                    RpcTakeDamage(1);
+                    RpcTakeDamage(damage);
                     yield return new WaitForSeconds(0.5f);
                 }
                 else
                 {
-                    CmdTakeDamage(1);
+                    CmdTakeDamage(damage);
                     yield return new WaitForSeconds(0.5f);
                 }
             }
