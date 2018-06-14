@@ -8,7 +8,7 @@
     "stackable": true,
     "rarity": 1,
     "slug": "wood",
-    "type": 3
+    "type": 4
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "stackable": true,
     "rarity": 1,
     "slug": "stone",
-    "type": 3
+    "type": 4
   },
   {
     "id": 3000,
@@ -92,6 +92,6 @@
     "stackable": false,
     "rarity": 1,
     "slug": "hatchet",
-    "type": 3
+    "type": 4
   }
 ]

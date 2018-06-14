@@ -22,7 +22,7 @@ public class ToggleMenu : MonoBehaviour {
     void Update()
     {
         if (Input.GetKeyDown(inventoryKey) && pauseMenu.GetComponent<CanvasGroup>().alpha == 0) toggleMenu(inventory);
-        if (Input.GetKeyDown(pauseKey) && inventory.GetComponent<CanvasGroup>().alpha == 0) toggleMenu(pauseMenu);
+        if (Input.GetKeyDown(pauseKey)) toggleMenu(pauseMenu);
     }
 
 
@@ -49,7 +49,11 @@ public class ToggleMenu : MonoBehaviour {
             menuObject.transform.GetChild(5).transform.GetChild(1).gameObject.SetActive(!menu.interactable);
             menuObject.transform.GetChild(5).transform.GetChild(2).gameObject.SetActive(!menu.interactable);
         }
-        //menu.alpha = Math.Abs(menu.alpha - 1);
+        if(menuObject == pauseMenu)
+        {
+            inventory.GetComponent<CanvasGroup>().alpha = Math.Abs(inventory.GetComponent<CanvasGroup>().alpha - 1);
+            menu.alpha = Math.Abs(menu.alpha - 1);
+        }
         menu.blocksRaycasts = !menu.blocksRaycasts;
         menu.interactable = !menu.interactable;
         crosshair.SetActive(!menu.interactable);
