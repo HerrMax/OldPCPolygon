@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4967233590555080}
   - component: {fileID: 33239853728952382}
   - component: {fileID: 23513715509161104}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114920831808898884}
   - component: {fileID: 114631768909998484}
   - component: {fileID: 114528370452143066}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hatchet
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4645174541666152}
   - component: {fileID: 33887963958932356}
   - component: {fileID: 23463623339795574}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,6 +119,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100002, guid: 88968af413e23b340a56bc633994ee59, type: 3}
   m_StaticBatchInfo:
@@ -153,6 +154,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 88968af413e23b340a56bc633994ee59, type: 3}
   m_StaticBatchInfo:
@@ -202,7 +204,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &65795912617078942
 BoxCollider:
   m_ObjectHideFlags: 1

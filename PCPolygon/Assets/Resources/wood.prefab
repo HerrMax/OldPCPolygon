@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114149192889528638}
   - component: {fileID: 114728884824390148}
   - component: {fileID: 114606122467908386}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: wood
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -59,6 +59,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: c4710d21d008be34f9920e736b753f9c, type: 2}
   - {fileID: 2100000, guid: daa969c434ebc3446a441b55fb1149e7, type: 2}
@@ -103,7 +104,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &64728721756696730
 MeshCollider:
   m_ObjectHideFlags: 1

@@ -432,7 +432,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!81 &81636138282789306
 AudioListener:
   m_ObjectHideFlags: 1
@@ -772,6 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 0}
+  healthbarText: {fileID: 0}
   maxHealth: 100
   disableOnDeath:
   - {fileID: 114123283864922564}
