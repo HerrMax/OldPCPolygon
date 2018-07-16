@@ -59,7 +59,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 52b9400ebc4c3d640853e780573947af, type: 2}
   - {fileID: 2100000, guid: f52a037cfb1bdfb41ad329ddf860d444, type: 2}
@@ -103,7 +102,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!65 &65293321552677186
 BoxCollider:
   m_ObjectHideFlags: 1
