@@ -49,12 +49,13 @@ public class Player : NetworkBehaviour {
 
         healthbar = GetComponent<PlayerSetup>().playerUIInstance.transform.FindChild("HealthBar").GetComponent<Slider>();
         healthbarText = healthbar.GetComponentInChildren<Text>();
-        healthbar.value = CalculateHealth();
-        healthbarText.text = " + " + currentHealth;
+        UpdateHealth();
     }
 
     private void Update()
     {
+        UpdateHealth();
+
         if (!isLocalPlayer) { return; }
 
         if (Input.GetKeyDown(KeyCode.K))
@@ -187,8 +188,7 @@ public class Player : NetworkBehaviour {
         yield return new WaitForSeconds(0.1f);
 
         SetDefaults();
-        healthbar.value = CalculateHealth();
-        healthbarText.text = " + " + currentHealth;
+        UpdateHealth();
 
         Debug.Log(transform.name + " has respawned.");
     }
@@ -219,8 +219,9 @@ public class Player : NetworkBehaviour {
         }
     }
 
-    float CalculateHealth()
+    public void UpdateHealth()
     {
-        return currentHealth / maxHealth;
+        healthbar.value = currentHealth / maxHealth;
+        healthbarText.text = " + " + currentHealth;
     }
 }
