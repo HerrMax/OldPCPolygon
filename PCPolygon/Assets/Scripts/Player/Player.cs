@@ -41,7 +41,7 @@ public class Player : NetworkBehaviour {
             wasEnabled[i] = disableOnDeath[i].enabled;
         }
 
-        setDefaults();
+        SetDefaults();
 
         //healthbar = GameObject.Find(gameObject.name + "'s UI").transform.GetChild(6).GetComponent<Slider>();
         //healthbar = GetComponent<PlayerSetup>().playerUIInstance.GetComponentInChildren<Slider>();
@@ -186,14 +186,14 @@ public class Player : NetworkBehaviour {
 
         yield return new WaitForSeconds(0.1f);
 
-        setDefaults();
+        SetDefaults();
         healthbar.value = CalculateHealth();
         healthbarText.text = " + " + currentHealth;
 
         Debug.Log(transform.name + " has respawned.");
     }
 
-    public void setDefaults()
+    public void SetDefaults()
     {
         isDead = false;
 
