@@ -132,8 +132,9 @@ public class Player : NetworkBehaviour {
         if (isDead) return;
 
         currentHealth -= amount;
-        healthbar.value = CalculateHealth();
-        healthbarText.text = " + " + currentHealth;
+
+        //healthbar.value = CalculateHealth();
+        //healthbarText.text = " + " + currentHealth;
 
         Debug.Log(transform.name + " now has " + currentHealth + " health.");
 
