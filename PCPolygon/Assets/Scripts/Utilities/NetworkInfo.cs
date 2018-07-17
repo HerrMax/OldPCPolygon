@@ -12,14 +12,15 @@ public class NetworkInfo : NetworkBehaviour {
 
     public override void OnStartClient()
     {
-        UpdateInfo();    }
+        UpdateInfo();
+    }
 
-    private void OnPlayerConnected(NetworkPlayer player)
+    private void OnPlayerConnected(NetworkIdentity player)
     {
         UpdateInfo();
     }
 
-    public void OnPlayerDisconnected(NetworkPlayer player)
+    public void OnPlayerDisconnected(NetworkIdentity player)
     {
         UpdateInfo();
     }
