@@ -256,6 +256,14 @@ public class Inventory : MonoBehaviour
 
     public string ReturnSelectedItem()
     {
-        return toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title;
+        try
+        {
+            return toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title;
+        }
+        catch
+        {
+            return "hands";
+        }
+
     }
 }
