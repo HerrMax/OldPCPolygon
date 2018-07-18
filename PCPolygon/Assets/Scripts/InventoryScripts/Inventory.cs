@@ -20,6 +20,8 @@ public class Inventory : MonoBehaviour
 
     public Drop drop;
 
+    public WeaponManager weaponManager;
+
     //Sets up basic system for items to go in
     void Start()
     {
@@ -45,6 +47,7 @@ public class Inventory : MonoBehaviour
             slots[i+5].GetComponent<ItemSlot>().id = i+5;
             slots[i+5].transform.SetParent(inventorySlotPanel.transform);
         }
+
     }
 
     //Test code to test adding items
@@ -63,6 +66,8 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
             ReturnSelectedItem();
+
+        if (Input.GetKeyDown(KeyCode.G)) weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
 
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -230,6 +235,6 @@ public class Inventory : MonoBehaviour
 
     public void ReturnSelectedItem()
     {
-        Debug.Log(toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title);
+       Debug.Log(toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title);
     }
 }

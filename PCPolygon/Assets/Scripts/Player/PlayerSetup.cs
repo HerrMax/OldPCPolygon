@@ -41,6 +41,8 @@ public class PlayerSetup : NetworkBehaviour {
             pickup.pickupText = toggleMenu.pickupText;
             pickup.inventory = playerUIInstance.GetComponentInChildren<Inventory>();
 
+            playerUIInstance.GetComponentInChildren<Inventory>().weaponManager = GetComponent<WeaponManager>();
+
             toggleMenu.disableOnToggle = this.disableOnToggle;
             toggleMenu.sway = this.GetComponentInChildren<Sway>();
             toggleMenu.weapon = this.GetComponent<WeaponShoot>();

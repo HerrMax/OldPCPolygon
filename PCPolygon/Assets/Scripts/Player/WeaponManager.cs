@@ -25,9 +25,34 @@ public class WeaponManager : NetworkBehaviour {
         EquipTool(primaryWeapon);
     }
 
+    public void SwapWeapon(string item, int slot)
+    {
+        UnequipTool(currentTool);
+        if (slot == 1)
+        {
+            EquipTool(primaryWeapon);
+        }
+        if (slot == 2)
+        {
+            EquipTool(secondaryWeapon);
+        }
+        if (slot == 3)
+        {
+            EquipTool(tertiaryWeapon);
+        }
+        if (slot == 4)
+        {
+            EquipTool(quaternaryWeapon);
+        }
+        if (slot == 5)
+        {
+            EquipTool(quinaryWeapon);
+        }
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             UnequipTool(currentTool);
             EquipTool(primaryWeapon);
@@ -51,7 +76,7 @@ public class WeaponManager : NetworkBehaviour {
         {
             UnequipTool(currentTool);
             EquipTool(quinaryWeapon);
-        }
+        }*/
     }
 
     public Weapon GetCurrentWeapon()
