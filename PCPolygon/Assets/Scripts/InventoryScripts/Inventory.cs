@@ -20,12 +20,9 @@ public class Inventory : MonoBehaviour
 
     public Drop drop;
 
-<<<<<<< HEAD
     public WeaponManager weaponManager;
-=======
     Color invRed = new Vector4(1, 0, 0, 1 / 2.55f);
     Color invWhite = new Vector4(1, 1, 1, 1 / 2.55f);
->>>>>>> 91928d9b893aed0d0107d24c7c3f7d05ce52f978
 
     //Sets up basic system for items to go in
     void Start()
@@ -260,10 +257,7 @@ public class Inventory : MonoBehaviour
 
     public string ReturnSelectedItem()
     {
-<<<<<<< HEAD
-       Debug.Log(toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title);
-=======
+        Debug.Log(toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title);
         return toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title;
->>>>>>> 91928d9b893aed0d0107d24c7c3f7d05ce52f978
     }
 }
