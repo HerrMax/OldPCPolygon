@@ -59,38 +59,37 @@ public class Inventory : MonoBehaviour
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 0;
+            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 1;
+            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 2;
+            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 3;
+            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 4;
+            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
         }
-
-        if (Input.GetKeyDown(KeyCode.P))
-            Debug.Log(ReturnSelectedItem());
-
-        if (Input.GetKeyDown(KeyCode.G)) weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
-
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -257,7 +256,6 @@ public class Inventory : MonoBehaviour
 
     public string ReturnSelectedItem()
     {
-        Debug.Log(toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title);
         return toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title;
     }
 }

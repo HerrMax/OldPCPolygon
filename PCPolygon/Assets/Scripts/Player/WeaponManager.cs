@@ -28,24 +28,29 @@ public class WeaponManager : NetworkBehaviour {
     public void SwapWeapon(string item, int slot)
     {
         UnequipTool(currentTool);
+        if (slot == 0)
+        {
+            primaryWeapon.name = item;
+            EquipTool(primaryWeapon);
+        }
         if (slot == 1)
         {
-            EquipTool(primaryWeapon);
+            secondaryWeapon.name = item;
+            EquipTool(secondaryWeapon);
         }
         if (slot == 2)
         {
-            EquipTool(secondaryWeapon);
+            tertiaryWeapon.name = item;
+            EquipTool(tertiaryWeapon);
         }
         if (slot == 3)
         {
-            EquipTool(tertiaryWeapon);
+            quaternaryWeapon.name = item;
+            EquipTool(quaternaryWeapon);
         }
         if (slot == 4)
         {
-            EquipTool(quaternaryWeapon);
-        }
-        if (slot == 5)
-        {
+            quinaryWeapon.name = item;
             EquipTool(quinaryWeapon);
         }
     }
@@ -94,17 +99,36 @@ public class WeaponManager : NetworkBehaviour {
         currentWeapon = weaponName;
 
         //This line handles viewmodel spawning
-        GameObject weaponInstance = (GameObject)Instantiate(Resources.Load("Viewmodels/"+currentWeapon.name), weaponHolder.position, weaponHolder.rotation);
-        weaponInstance.transform.SetParent(weaponHolder);
-
-        currentTool = weaponInstance;
-
-        currentGraphics = weaponInstance.GetComponent<WeaponGraphics>();
-        if (currentGraphics == null) Debug.LogError("NOGRAPHICS: " + weaponInstance.name);
-
-        if (isLocalPlayer)
+        try
         {
-            SetLayerRecursively(weaponInstance, LayerMask.NameToLayer(viewmodelLayerName));
+            GameObject weaponInstance = (GameObject)Instantiate(Resources.Load("Viewmodels/" + currentWeapon.name), weaponHolder.position, weaponHolder.rotation);
+            weaponInstance.transform.SetParent(weaponHolder);
+
+            currentTool = weaponInstance;
+
+            currentGraphics = weaponInstance.GetComponent<WeaponGraphics>();
+            if (currentGraphics == null) Debug.LogError("NOGRAPHICS: " + weaponInstance.name);
+
+            if (isLocalPlayer)
+            {
+                SetLayerRecursively(weaponInstance, LayerMask.NameToLayer(viewmodelLayerName));
+            }
+        }
+        catch
+        {
+            Debug.LogWarning("NO VIEWMODEL FOR " + currentWeapon.name);
+
+            GameObject weaponInstance = (GameObject)Instantiate(Resources.Load("Viewmodels/Null"), weaponHolder.position, weaponHolder.rotation);
+            weaponInstance.transform.SetParent(weaponHolder);
+
+            currentTool = weaponInstance;
+
+            currentGraphics = weaponInstance.GetComponent<WeaponGraphics>();
+
+            if (isLocalPlayer)
+            {
+                SetLayerRecursively(weaponInstance, LayerMask.NameToLayer(viewmodelLayerName));
+            }
         }
     }
 
