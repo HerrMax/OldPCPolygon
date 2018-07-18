@@ -7,9 +7,9 @@ public class WeaponManager : NetworkBehaviour {
 
     [SerializeField] private Weapon primaryWeapon;
     [SerializeField] private Weapon secondaryWeapon;
-    [SerializeField] private Weapon tertiaryWeapon1;
-    [SerializeField] private Weapon tertiaryWeapon2;
-    [SerializeField] private Weapon tertiaryWeapon3;
+    [SerializeField] private Weapon tertiaryWeapon;
+    [SerializeField] private Weapon quaternaryWeapon;
+    [SerializeField] private Weapon quinaryWeapon;
 
     [SerializeField] private Transform weaponHolder;
 
@@ -37,6 +37,7 @@ public class WeaponManager : NetworkBehaviour {
     {
         currentWeapon = weaponName;
 
+        //This line handles viewmodel spawning
         GameObject weaponInstance = (GameObject)Instantiate(weaponName.graphics, weaponHolder.position, weaponHolder.rotation);
         weaponInstance.transform.SetParent(weaponHolder);
 

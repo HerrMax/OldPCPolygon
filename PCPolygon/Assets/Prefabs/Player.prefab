@@ -804,12 +804,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeapon:
-    name: Augarino
+    name: Matteson
     damage: 10
     range: 100
     isAutomatic: 1
     rateOfFire: 11
-    graphics: {fileID: 1371441941724300, guid: fd1948bd00c386c4596fec30989a9835, type: 2}
+    graphics: {fileID: 1549759046529928, guid: f4427ee742870764e988700fb78956ef, type: 2}
   secondaryWeapon:
     name: Augarino
     damage: 10
