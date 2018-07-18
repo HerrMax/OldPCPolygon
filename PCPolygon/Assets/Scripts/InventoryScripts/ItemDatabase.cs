@@ -39,7 +39,7 @@ public class ItemDatabase : MonoBehaviour
         {
             try
             {
-                database.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), (int)itemData[i]["stats"]["damage"], (int)itemData[i]["stats"]["range"], (int)itemData[i]["stats"]["rateOfFire"], (int)itemData[i]["stats"]["magSize"], itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString(), (int)itemData[i]["type"]));
+                database.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), (int)itemData[i]["stats"]["damage"], (int)itemData[i]["stats"]["range"], (int)itemData[i]["stats"]["rateOfFire"], (bool)itemData[i]["stats"]["isAuto"], (int)itemData[i]["stats"]["magSize"], itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString(), (int)itemData[i]["type"]));
             }
             catch
             {
@@ -60,6 +60,7 @@ public class Item
     public int Range { get; set; }
     public int RateOfFire { get; set; }
     public int MagSize { get; set; }
+    public bool IsAuto { get; set; }
     public string Description { get; set; }
     public bool Stackable { get; set; }
     public int Rarity { get; set; }
@@ -68,7 +69,7 @@ public class Item
     public int Type { get; set; }
 
     //For adding an Item normally
-    public Item(int id, string title, int damage, int range, int rateOfFire, int magsize, string description, bool stackable, int rarity, string slug, int type)
+    public Item(int id, string title, int damage, int range, int rateOfFire, bool isAuto, int magsize, string description, bool stackable, int rarity, string slug, int type)
     {
         ID = id;
         Title = title;
@@ -76,6 +77,7 @@ public class Item
         Range = range;
         RateOfFire = rateOfFire;
         MagSize = magsize;
+        IsAuto = isAuto;
         Description = description;
         Stackable = stackable;
         Rarity = rarity;

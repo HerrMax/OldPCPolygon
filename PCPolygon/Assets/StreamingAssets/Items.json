@@ -8,7 +8,7 @@
     "stackable": true,
     "rarity": 1,
     "slug": "wood",
-    "type": 3
+    "type": 4
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "stackable": true,
     "rarity": 1,
     "slug": "stone",
-    "type": 3
+    "type": 4
   },
   {
     "id": 3000,
@@ -26,7 +26,8 @@
       "damage": 10,
       "range": 100,
       "rateOfFire": 11,
-      "magSize": 30
+      "magSize": 30,
+	  "isAuto": true
     },
     "description": "An all round decent assault rifle",
     "stackable": false,
@@ -41,7 +42,8 @@
       "damage": 80,
       "range": 500, //Not too sure of this. Feel free to change it
       "rateOfFire": 3,
-      "magSize": 5
+      "magSize": 5,
+	  "isAuto": false
     },
     "description": "A long ranged sniper rifle for when stuff is a long way away",
     "stackable": false,
@@ -56,7 +58,8 @@
       "damage": 21,
       "range": 500,
       "rateOfFire": 1,
-      "magSize": 1
+      "magSize": 1,
+	  "isAuto": false
     },
     "description": "Pew pew daddy",
     "stackable": false,
@@ -71,7 +74,8 @@
       "damage": 40,
       "range": 3,
       "rateOfFire": 2,
-      "magSize": 0
+      "magSize": 0,
+	  "isAuto": false
     },
     "description": "Cut cut",
     "stackable": false,
@@ -86,12 +90,13 @@
       "damage": 60,
       "range": 5,
       "rateOfFire": 1,
-      "magSize": 0
+      "magSize": 0,
+	  "isAuto": false
     },
     "description": "Chop chop",
     "stackable": false,
     "rarity": 1,
     "slug": "hatchet",
-    "type": 3
+    "type": 4
   }
 ]

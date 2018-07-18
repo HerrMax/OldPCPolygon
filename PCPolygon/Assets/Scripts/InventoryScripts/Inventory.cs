@@ -12,12 +12,17 @@ public class Inventory : MonoBehaviour
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
+    public int SelectedItem;
 
     int slotAmount;
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
     public Drop drop;
+
+    public WeaponManager weaponManager;
+    Color invRed = new Vector4(1, 0, 0, 1 / 2.55f);
+    Color invWhite = new Vector4(1, 1, 1, 1 / 2.55f);
 
     //Sets up basic system for items to go in
     void Start()
@@ -44,11 +49,60 @@ public class Inventory : MonoBehaviour
             slots[i+5].GetComponent<ItemSlot>().id = i+5;
             slots[i+5].transform.SetParent(inventorySlotPanel.transform);
         }
+
+        weaponManager.SwapWeapon("Hands", 0);
+
     }
 
     //Test code to test adding items
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
+            SelectedItem = 0;
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
+            SelectedItem = 1;
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
+            SelectedItem = 2;
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
+            SelectedItem = 3;
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
+            SelectedItem = 4;
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
+        }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             drop.DropItem("augarino");
@@ -65,23 +119,9 @@ public class Inventory : MonoBehaviour
         {
             drop.DropItem("stone");
         }
-        /*if (Input.GetKeyDown(KeyCode.A))
-        {
-            AddItem(3000);
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            AddItem(3001);
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            AddItem(3002);
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-            DestroyItemById(3000);*/
     }
+
+
 
     /// <summary>
     /// Adds an item to the inventory by ID
@@ -108,7 +148,7 @@ public class Inventory : MonoBehaviour
         {
             for (int i = 0; i < items.Count; i++)
             {
-                if (items[i].ID == -1 && (id <= itemToAdd.Type || id >= 5))
+                if (items[i].ID == -1 && (i <= itemToAdd.Type || i >= 5))
                 {
                     items[i] = itemToAdd;
                     GameObject itemObj = Instantiate(inventoryItem);
@@ -208,5 +248,18 @@ public class Inventory : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    public Item ReturnSelectedItem()
+    {
+        try
+        {
+            return toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item;
+        }
+        catch
+        {
+            return new Item();
+        }
+
     }
 }

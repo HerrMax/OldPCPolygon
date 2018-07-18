@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
+#pragma warning disable 0618
+
 [RequireComponent(typeof(PlayerSetup))]
 public class Player : NetworkBehaviour {
 
     [SerializeField] private Slider healthbar;
+    [SerializeField] private Text healthbarText;
 
     [SyncVar]
     private bool _isDead = false;
@@ -38,14 +41,21 @@ public class Player : NetworkBehaviour {
             wasEnabled[i] = disableOnDeath[i].enabled;
         }
 
-        setDefaults();
+        SetDefaults();
 
-        healthbar = GameObject.Find(gameObject.name + "'s UI").transform.GetChild(6).GetComponent<Slider>();
-        healthbar.value = CalculateHealth();
+        //healthbar = GameObject.Find(gameObject.name + "'s UI").transform.GetChild(6).GetComponent<Slider>();
+        //healthbar = GetComponent<PlayerSetup>().playerUIInstance.GetComponentInChildren<Slider>();
+        //healthbar = GetComponent<PlayerSetup>().playerUIInstance.transform.GetChild(6).GetComponent<Slider>();
+
+        healthbar = GetComponent<PlayerSetup>().playerUIInstance.transform.FindChild("HealthBar").GetComponent<Slider>();
+        healthbarText = healthbar.GetComponentInChildren<Text>();
+        UpdateHealth();
     }
 
     private void Update()
     {
+        UpdateHealth();
+
         if (!isLocalPlayer) { return; }
 
         if (Input.GetKeyDown(KeyCode.K))
@@ -73,6 +83,42 @@ public class Player : NetworkBehaviour {
                 Debug.Log("Player.cs Line 63-75");
             }
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            PoisonPlayer(50,2);
+        }
+    }
+
+    /// <summary>
+    /// A method that damages the player over time
+    /// </summary>
+    /// <param name="time">The amount of time to damage the player for</param>
+    /// <param name="DPS">The amount of damage to deal to the player every second</param>
+    void PoisonPlayer(int time, int DPS)
+    {
+        StartCoroutine(SlowDamage(time, DPS));
+    }
+
+    IEnumerator SlowDamage(int time, int DPS)
+    {
+        float damage = DPS / 2;
+
+        for (int i = 0; i <= 2*time; i++)
+        {
+            if(currentHealth > 0)
+            {
+                if (isServer)
+                {
+                    RpcTakeDamage(damage);
+                    yield return new WaitForSeconds(0.5f);
+                }
+                else
+                {
+                    CmdTakeDamage(damage);
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
+        }
     }
 
     [Command]
@@ -87,7 +133,9 @@ public class Player : NetworkBehaviour {
         if (isDead) return;
 
         currentHealth -= amount;
-        healthbar.value = CalculateHealth();
+
+        //healthbar.value = CalculateHealth();
+        //healthbarText.text = " + " + currentHealth;
 
         Debug.Log(transform.name + " now has " + currentHealth + " health.");
 
@@ -139,13 +187,13 @@ public class Player : NetworkBehaviour {
 
         yield return new WaitForSeconds(0.1f);
 
-        setDefaults();
-        healthbar.value = CalculateHealth();
+        SetDefaults();
+        UpdateHealth();
 
         Debug.Log(transform.name + " has respawned.");
     }
 
-    public void setDefaults()
+    public void SetDefaults()
     {
         isDead = false;
 
@@ -171,8 +219,9 @@ public class Player : NetworkBehaviour {
         }
     }
 
-    float CalculateHealth()
+    public void UpdateHealth()
     {
-        return currentHealth / maxHealth;
+        healthbar.value = currentHealth / maxHealth;
+        healthbarText.text = " + " + currentHealth;
     }
 }

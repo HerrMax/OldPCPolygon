@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour {
         //crosshair.active = !inventory.active;
         for (int i = 0; i < disableOnToggle.Length; i++)
         {
-            disableOnToggle[i].enabled = !inventory.activeSelf;
+            disableOnToggle[i].enabled = !menuToToggle.activeSelf;
         }
     }
 

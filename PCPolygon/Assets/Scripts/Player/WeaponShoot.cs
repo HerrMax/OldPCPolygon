@@ -26,6 +26,8 @@ public class WeaponShoot : NetworkBehaviour {
     {
         currentWeapon = weaponManager.GetCurrentWeapon();
 
+        Debug.Log(currentWeapon.name);
+
         if (currentWeapon.rateOfFire <= 0 && Input.GetKeyDown(shoot))
         {
             Shoot();
@@ -35,7 +37,8 @@ public class WeaponShoot : NetworkBehaviour {
             if (Input.GetKeyDown(shoot))
             {
                 InvokeRepeating("Shoot", 0f, 1f/currentWeapon.rateOfFire);
-            }else if (Input.GetKeyUp(shoot))
+            }
+            else if (Input.GetKeyUp(shoot))
             {
                 stopShooting();
             }
@@ -56,7 +59,15 @@ public class WeaponShoot : NetworkBehaviour {
     [ClientRpc]
     void RpcPlayMuzzleFlash()
     {
-        weaponManager.GetCurrentGraphics().muzzleFlash.Play();
+        try
+        {
+            weaponManager.GetCurrentGraphics().muzzleFlash.Play();
+        }
+        catch
+        {
+            return;
+        }
+        
     }
 
     [Command]
