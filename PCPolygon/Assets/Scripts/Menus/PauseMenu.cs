@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour {
         networkManager = NetworkManager.singleton; 
 	}
 
-    public void leaveGame()
+    public void LeaveGame()
     {
         networkManager.StopClient();
         if (!NetworkClient.active) networkManager.StopHost();
