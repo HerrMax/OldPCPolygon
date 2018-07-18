@@ -61,35 +61,37 @@ public class Inventory : MonoBehaviour
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 0;
-            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 1;
-            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 2;
-            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 3;
-            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 4;
-            weaponManager.SwapWeapon(ReturnSelectedItem(), SelectedItem);
+            weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
         }
 
@@ -109,22 +111,6 @@ public class Inventory : MonoBehaviour
         {
             drop.DropItem("stone");
         }
-        /*if (Input.GetKeyDown(KeyCode.A))
-        {
-            AddItem(3000);
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            AddItem(3001);
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            AddItem(3002);
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-            DestroyItemById(3000);*/
     }
 
 

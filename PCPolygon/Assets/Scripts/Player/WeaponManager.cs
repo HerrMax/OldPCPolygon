@@ -50,35 +50,6 @@ public class WeaponManager : NetworkBehaviour {
         }
     }
 
-    private void Update()
-    {
-        /*if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            UnequipTool(currentTool);
-            EquipTool(primaryWeapon);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            UnequipTool(currentTool);
-            EquipTool(secondaryWeapon);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            UnequipTool(currentTool);
-            EquipTool(tertiaryWeapon);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            UnequipTool(currentTool);
-            EquipTool(quaternaryWeapon);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            UnequipTool(currentTool);
-            EquipTool(quinaryWeapon);
-        }*/
-    }
-
     public Weapon GetCurrentWeapon()
     {
         return currentWeapon;
@@ -93,7 +64,7 @@ public class WeaponManager : NetworkBehaviour {
     {
         currentWeapon = weaponName;
 
-        //This line handles viewmodel spawning
+        //This stuff handles viewmodel spawning
         try
         {
             GameObject weaponInstance = (GameObject)Instantiate(Resources.Load("Viewmodels/" + currentWeapon.name), weaponHolder.position, weaponHolder.rotation);
@@ -142,4 +113,42 @@ public class WeaponManager : NetworkBehaviour {
         }
     }
 
+    public void SetWeaponStats(int slot, int damage, int range, bool isAuto, int ROF)
+    {
+        if(slot == 0)
+        {
+            primaryWeapon.damage = damage;
+            primaryWeapon.range = range;
+            primaryWeapon.isAutomatic = isAuto;
+            primaryWeapon.rateOfFire = ROF;
+        }
+        if (slot == 1)
+        {
+            secondaryWeapon.damage = damage;
+            secondaryWeapon.range = range;
+            secondaryWeapon.isAutomatic = isAuto;
+            secondaryWeapon.rateOfFire = ROF;
+        }
+        if (slot == 2)
+        {
+            tertiaryWeapon.damage = damage;
+            tertiaryWeapon.range = range;
+            tertiaryWeapon.isAutomatic = isAuto;
+            tertiaryWeapon.rateOfFire = ROF;
+        }
+        if (slot == 3)
+        {
+            quaternaryWeapon.damage = damage;
+            quaternaryWeapon.range = range;
+            quaternaryWeapon.isAutomatic = isAuto;
+            quaternaryWeapon.rateOfFire = ROF;
+        }
+        if (slot == 4)
+        {
+            quaternaryWeapon.damage = damage;
+            quaternaryWeapon.range = range;
+            quaternaryWeapon.isAutomatic = isAuto;
+            quaternaryWeapon.rateOfFire = ROF;
+        }
+    }
 }
