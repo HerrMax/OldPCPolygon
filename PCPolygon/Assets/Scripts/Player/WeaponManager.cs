@@ -18,9 +18,45 @@ public class WeaponManager : NetworkBehaviour {
     private Weapon currentWeapon;
     private WeaponGraphics currentGraphics;
 
+    public GameObject currentTool;
+
     private void Start()
     {
         EquipTool(primaryWeapon);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            UnequipTool(currentTool);
+            EquipTool(primaryWeapon);
+            Debug.Log("1");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            UnequipTool(currentTool);
+            EquipTool(secondaryWeapon);
+            Debug.Log("2");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            UnequipTool(currentTool);
+            EquipTool(tertiaryWeapon);
+            Debug.Log("3");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            UnequipTool(currentTool);
+            EquipTool(quaternaryWeapon);
+            Debug.Log("4");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            UnequipTool(currentTool);
+            EquipTool(quinaryWeapon);
+            Debug.Log("5");
+        }
     }
 
     public Weapon GetCurrentWeapon()
@@ -38,8 +74,10 @@ public class WeaponManager : NetworkBehaviour {
         currentWeapon = weaponName;
 
         //This line handles viewmodel spawning
-        GameObject weaponInstance = (GameObject)Instantiate(weaponName.graphics, weaponHolder.position, weaponHolder.rotation);
+        GameObject weaponInstance = (GameObject)Instantiate(Resources.Load("Viewmodels/"+currentWeapon.name), weaponHolder.position, weaponHolder.rotation);
         weaponInstance.transform.SetParent(weaponHolder);
+
+        currentTool = weaponInstance;
 
         currentGraphics = weaponInstance.GetComponent<WeaponGraphics>();
         if (currentGraphics == null) Debug.LogError("NOGRAPHICS: " + weaponInstance.name);
@@ -48,6 +86,11 @@ public class WeaponManager : NetworkBehaviour {
         {
             SetLayerRecursively(weaponInstance, LayerMask.NameToLayer(viewmodelLayerName));
         }
+    }
+
+    void UnequipTool(GameObject currentToola)
+    {
+        Destroy(currentTool);
     }
 
     void SetLayerRecursively(GameObject obj, int newLayer)

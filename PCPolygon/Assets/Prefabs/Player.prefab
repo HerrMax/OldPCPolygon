@@ -804,42 +804,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeapon:
-    name: Matteson
+    name: Augarino
     damage: 10
     range: 100
     isAutomatic: 1
-    rateOfFire: 11
-    graphics: {fileID: 1549759046529928, guid: f4427ee742870764e988700fb78956ef, type: 2}
+    rateOfFire: 10
   secondaryWeapon:
-    name: Augarino
-    damage: 10
+    name: Matteson
+    damage: 50
     range: 100
-    isAutomatic: 1
-    rateOfFire: 11
-    graphics: {fileID: 0}
-  tertiaryWeapon1:
+    isAutomatic: 0
+    rateOfFire: 1
+  tertiaryWeapon:
     name: Augarino
-    damage: 10
-    range: 100
-    isAutomatic: 1
-    rateOfFire: 11
-    graphics: {fileID: 0}
-  tertiaryWeapon2:
+    damage: 0
+    range: 0
+    isAutomatic: 0
+    rateOfFire: 0
+  quaternaryWeapon:
+    name: Matteson
+    damage: 0
+    range: 0
+    isAutomatic: 0
+    rateOfFire: 0
+  quinaryWeapon:
     name: Augarino
-    damage: 10
-    range: 100
-    isAutomatic: 1
-    rateOfFire: 11
-    graphics: {fileID: 0}
-  tertiaryWeapon3:
-    name: Augarino
-    damage: 10
-    range: 100
-    isAutomatic: 1
-    rateOfFire: 11
-    graphics: {fileID: 0}
+    damage: 0
+    range: 0
+    isAutomatic: 0
+    rateOfFire: 0
   weaponHolder: {fileID: 4061776281474604}
   viewmodelLayerName: Viewmodel
+  currentTool: {fileID: 0}
 --- !u!114 &114327547946837190
 MonoBehaviour:
   m_ObjectHideFlags: 1
