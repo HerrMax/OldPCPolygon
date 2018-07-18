@@ -50,6 +50,8 @@ public class Inventory : MonoBehaviour
             slots[i+5].transform.SetParent(inventorySlotPanel.transform);
         }
 
+        weaponManager.SwapWeapon("Hands", 0);
+
     }
 
     //Test code to test adding items
@@ -262,7 +264,7 @@ public class Inventory : MonoBehaviour
         }
         catch
         {
-            return "hands";
+            return "Hands";
         }
 
     }

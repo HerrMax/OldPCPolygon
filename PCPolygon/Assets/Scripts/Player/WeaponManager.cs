@@ -20,11 +20,6 @@ public class WeaponManager : NetworkBehaviour {
 
     public GameObject currentTool;
 
-    private void Start()
-    {
-        EquipTool(primaryWeapon);
-    }
-
     public void SwapWeapon(string item, int slot)
     {
         UnequipTool(currentTool);
