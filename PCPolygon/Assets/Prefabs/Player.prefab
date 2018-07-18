@@ -804,7 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeapon:
-    name: 
+    name: Hands
     damage: 0
     range: 0
     isAutomatic: 0
