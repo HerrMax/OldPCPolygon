@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
+    int SelectedItem;
 
     int slotAmount;
     public List<Item> items = new List<Item>();
@@ -49,6 +50,21 @@ public class Inventory : MonoBehaviour
     //Test code to test adding items
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            SelectedItem = 0;
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            SelectedItem = 1;
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SelectedItem = 2;
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+            SelectedItem = 3;
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+            SelectedItem = 4;
+
+        if (Input.GetKeyDown(KeyCode.P))
+            ReturnSelectedItem();
+
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             drop.DropItem("augarino");
@@ -82,6 +98,8 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
             DestroyItemById(3000);*/
     }
+
+
 
     /// <summary>
     /// Adds an item to the inventory by ID
@@ -208,5 +226,10 @@ public class Inventory : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    public void ReturnSelectedItem()
+    {
+        Debug.Log(toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title);
     }
 }
