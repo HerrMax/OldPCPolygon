@@ -20,6 +20,9 @@ public class Inventory : MonoBehaviour
 
     public Drop drop;
 
+    Color invRed = new Vector4(1, 0, 0, 1 / 2.55f);
+    Color invWhite = new Vector4(1, 1, 1, 1 / 2.55f);
+
     //Sets up basic system for items to go in
     void Start()
     {
@@ -51,18 +54,38 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 0;
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 1;
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 2;
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 3;
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invWhite;
             SelectedItem = 4;
+            toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+        }
 
         if (Input.GetKeyDown(KeyCode.P))
-            ReturnSelectedItem();
+            Debug.Log(ReturnSelectedItem());
 
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -228,8 +251,8 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public void ReturnSelectedItem()
+    public string ReturnSelectedItem()
     {
-        Debug.Log(toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title);
+        return toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title;
     }
 }
