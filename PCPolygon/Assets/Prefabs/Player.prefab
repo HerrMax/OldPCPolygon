@@ -762,7 +762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4580675403976224}
   m_ChildIndex: 0
-  m_SendInterval: 0.04761905
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 1
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -804,31 +804,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeapon:
-    name: Augarino
-    damage: 10
-    range: 100
-    isAutomatic: 1
-    rateOfFire: 10
-  secondaryWeapon:
-    name: Matteson
-    damage: 50
-    range: 100
+    name: 
+    damage: 0
+    range: 0
     isAutomatic: 0
-    rateOfFire: 1
+    rateOfFire: 0
+  secondaryWeapon:
+    name: 
+    damage: 0
+    range: 0
+    isAutomatic: 0
+    rateOfFire: 0
   tertiaryWeapon:
-    name: Augarino
+    name: 
     damage: 0
     range: 0
     isAutomatic: 0
     rateOfFire: 0
   quaternaryWeapon:
-    name: Matteson
+    name: 
     damage: 0
     range: 0
     isAutomatic: 0
     rateOfFire: 0
   quinaryWeapon:
-    name: Augarino
+    name: 
     damage: 0
     range: 0
     isAutomatic: 0
@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 4
-  m_SendInterval: 0.04761905
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 2
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

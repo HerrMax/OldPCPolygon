@@ -72,6 +72,8 @@ public class Inventory : MonoBehaviour
             SelectedItem = 1;
             weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -79,6 +81,8 @@ public class Inventory : MonoBehaviour
             SelectedItem = 2;
             weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -86,6 +90,8 @@ public class Inventory : MonoBehaviour
             SelectedItem = 3;
             weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
@@ -93,6 +99,8 @@ public class Inventory : MonoBehaviour
             SelectedItem = 4;
             weaponManager.SwapWeapon(ReturnSelectedItem().Title, SelectedItem);
             toolbarSlotPanel.transform.GetChild(SelectedItem).GetComponent<Image>().color = invRed;
+
+            weaponManager.SetWeaponStats(SelectedItem, ReturnSelectedItem().Damage, ReturnSelectedItem().Range, ReturnSelectedItem().IsAuto, ReturnSelectedItem().RateOfFire);
         }
 
         if (Input.GetKeyDown(KeyCode.R))

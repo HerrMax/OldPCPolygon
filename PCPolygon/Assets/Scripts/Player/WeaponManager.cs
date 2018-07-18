@@ -145,10 +145,10 @@ public class WeaponManager : NetworkBehaviour {
         }
         if (slot == 4)
         {
-            quaternaryWeapon.damage = damage;
-            quaternaryWeapon.range = range;
-            quaternaryWeapon.isAutomatic = isAuto;
-            quaternaryWeapon.rateOfFire = ROF;
+            quinaryWeapon.damage = damage;
+            quinaryWeapon.range = range;
+            quinaryWeapon.isAutomatic = isAuto;
+            quinaryWeapon.rateOfFire = ROF;
         }
     }
 }

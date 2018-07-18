@@ -138,5 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzleFlash: {fileID: 0}
-  groundImpact: {fileID: 0}
-  playerImpact: {fileID: 0}
+  groundImpact: {fileID: 1973024272605640, guid: 0de923bdfcb6a40489d6dff3ee08b8a8,
+    type: 2}
+  playerImpact: {fileID: 1411960260541738, guid: 874ceb2d1a3a27b49bd6bfced488f2ac,
+    type: 2}
