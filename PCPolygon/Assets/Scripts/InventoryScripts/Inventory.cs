@@ -256,15 +256,15 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public string ReturnSelectedItem()
+    public Item ReturnSelectedItem()
     {
         try
         {
-            return toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item.Title;
+            return toolbarSlotPanel.transform.GetChild(SelectedItem).GetChild(0).GetComponent<ItemData>().item;
         }
         catch
         {
-            return "Hands";
+            return new Item();
         }
 
     }
