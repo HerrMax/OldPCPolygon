@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
-    int SelectedItem;
+    public int SelectedItem;
 
     int slotAmount;
     public List<Item> items = new List<Item>();

@@ -31,31 +31,26 @@ public class WeaponManager : NetworkBehaviour {
         {
             UnequipTool(currentTool);
             EquipTool(primaryWeapon);
-            Debug.Log("1");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             UnequipTool(currentTool);
             EquipTool(secondaryWeapon);
-            Debug.Log("2");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             UnequipTool(currentTool);
             EquipTool(tertiaryWeapon);
-            Debug.Log("3");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             UnequipTool(currentTool);
             EquipTool(quaternaryWeapon);
-            Debug.Log("4");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             UnequipTool(currentTool);
             EquipTool(quinaryWeapon);
-            Debug.Log("5");
         }
     }
 
