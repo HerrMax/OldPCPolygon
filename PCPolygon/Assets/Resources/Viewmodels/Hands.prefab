@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4637592338411618}
   - component: {fileID: 33097972894866446}
   - component: {fileID: 23569796543482384}
-  - component: {fileID: 65814127227650442}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -38,6 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4285513131264264}
   - component: {fileID: 114156565339779396}
+  - component: {fileID: 114296207086333110}
+  - component: {fileID: 114742034537779852}
   m_Layer: 0
   m_Name: Hands
   m_TagString: Untagged
@@ -114,18 +115,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1108645428331522}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65814127227650442
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1108645428331522}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114156565339779396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,3 +131,46 @@ MonoBehaviour:
     type: 2}
   playerImpact: {fileID: 1411960260541738, guid: 874ceb2d1a3a27b49bd6bfced488f2ac,
     type: 2}
+--- !u!114 &114296207086333110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937502400855888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 249
+    i1: 238
+    i2: 251
+    i3: 86
+    i4: 156
+    i5: 189
+    i6: 119
+    i7: 228
+    i8: 43
+    i9: 75
+    i10: 250
+    i11: 6
+    i12: 198
+    i13: 80
+    i14: 124
+    i15: 44
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114742034537779852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937502400855888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d01a7591f6f4c42a336f968444b6a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

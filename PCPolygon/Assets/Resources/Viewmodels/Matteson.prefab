@@ -55,6 +55,8 @@ GameObject:
   - component: {fileID: 4907160624112062}
   - component: {fileID: 95627933081634028}
   - component: {fileID: 114254587790947450}
+  - component: {fileID: 114123875812561116}
+  - component: {fileID: 114805477579615098}
   m_Layer: 0
   m_Name: Matteson
   m_TagString: Untagged
@@ -599,6 +601,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114123875812561116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549759046529928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 244
+    i1: 66
+    i2: 126
+    i3: 231
+    i4: 66
+    i5: 135
+    i6: 7
+    i7: 100
+    i8: 233
+    i9: 136
+    i10: 112
+    i11: 15
+    i12: 183
+    i13: 137
+    i14: 86
+    i15: 239
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114254587790947450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -616,3 +650,14 @@ MonoBehaviour:
     type: 2}
   playerImpact: {fileID: 1411960260541738, guid: 874ceb2d1a3a27b49bd6bfced488f2ac,
     type: 2}
+--- !u!114 &114805477579615098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549759046529928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d01a7591f6f4c42a336f968444b6a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

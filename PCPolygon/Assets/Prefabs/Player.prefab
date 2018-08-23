@@ -103,6 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4061776281474604}
+  - component: {fileID: 114266631115107950}
   m_Layer: 8
   m_Name: WeaponSelection
   m_TagString: Untagged
@@ -454,7 +455,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1463287710432206}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f0b4639715ec7464dad48828d0a672c6, type: 3}
@@ -792,6 +793,38 @@ MonoBehaviour:
   - {fileID: 1541993198747844}
   deathParticles: {fileID: 1271149315007406, guid: 942799fd8eef4b740857fd627c02f202,
     type: 2}
+--- !u!114 &114266631115107950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625454646752350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 236
+    i1: 138
+    i2: 55
+    i3: 33
+    i4: 180
+    i5: 24
+    i6: 195
+    i7: 52
+    i8: 41
+    i9: 255
+    i10: 157
+    i11: 157
+    i12: 52
+    i13: 224
+    i14: 86
+    i15: 203
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114297078824355824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -852,6 +885,12 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 4294967039
+  currentWeapon:
+    name: Augarino
+    damage: 10
+    range: 100
+    isAutomatic: 1
+    rateOfFire: 11
 --- !u!114 &114399776530776094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -977,6 +1016,7 @@ MonoBehaviour:
   - {fileID: 114500881815318146}
   - {fileID: 20817460325370440}
   - {fileID: 114191307443354064}
+  - {fileID: 114327547946837190}
   disableOnToggle:
   - {fileID: 114327547946837190}
   - {fileID: 114866916607024734}

@@ -52,13 +52,18 @@ public class PlayerSetup : NetworkBehaviour {
             skinTone = Random.Range(0, skinTones.Length);
         }
 
-        CmdSetSkinTone();
+        CmdSetSkinTone(skinTone);
 
         GetComponent<Player>().Setup();
     }
 
     [Command]
-    void CmdSetSkinTone()
+    void CmdSetSkinTone(int skinTone)
+    {
+        RpcSetSkinTone(skinTone);
+    }
+
+    void RpcSetSkinTone(int skinTone)
     {
         playerGraphics.GetComponent<Renderer>().material = skinTones[skinTone];
     }

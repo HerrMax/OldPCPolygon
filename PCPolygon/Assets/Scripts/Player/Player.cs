@@ -47,9 +47,13 @@ public class Player : NetworkBehaviour {
         //healthbar = GetComponent<PlayerSetup>().playerUIInstance.GetComponentInChildren<Slider>();
         //healthbar = GetComponent<PlayerSetup>().playerUIInstance.transform.GetChild(6).GetComponent<Slider>();
 
-        healthbar = GetComponent<PlayerSetup>().playerUIInstance.transform.FindChild("HealthBar").GetComponent<Slider>();
-        healthbarText = healthbar.GetComponentInChildren<Text>();
-        UpdateHealth();
+        if (isLocalPlayer)
+        {
+            healthbar = GetComponent<PlayerSetup>().playerUIInstance.transform.FindChild("HealthBar").GetComponent<Slider>();
+            healthbarText = healthbar.GetComponentInChildren<Text>();
+            UpdateHealth();
+        }
+        
     }
 
     private void Update()
@@ -75,12 +79,10 @@ public class Player : NetworkBehaviour {
             if (isServer)
             {
                 RpcTakeDamage(20);
-                Debug.Log("Player.cs Line 63-75");
             }
             else
             {
                 CmdTakeDamage(20);
-                Debug.Log("Player.cs Line 63-75");
             }
         }
         if (Input.GetKeyDown(KeyCode.M))

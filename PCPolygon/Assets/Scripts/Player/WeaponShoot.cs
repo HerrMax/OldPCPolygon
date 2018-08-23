@@ -14,7 +14,7 @@ public class WeaponShoot : NetworkBehaviour {
     [SerializeField]
     private LayerMask mask;
 
-    private Weapon currentWeapon;
+    [SerializeField] private Weapon currentWeapon;
     private WeaponManager weaponManager;
 
     private void Start()
@@ -25,8 +25,6 @@ public class WeaponShoot : NetworkBehaviour {
     private void Update()
     {
         currentWeapon = weaponManager.GetCurrentWeapon();
-
-        Debug.Log(currentWeapon.name);
 
         if (currentWeapon.rateOfFire <= 0 && Input.GetKeyDown(shoot))
         {

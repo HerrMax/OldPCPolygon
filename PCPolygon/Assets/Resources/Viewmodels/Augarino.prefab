@@ -191,6 +191,8 @@ GameObject:
   - component: {fileID: 4889503042987274}
   - component: {fileID: 95473281224731892}
   - component: {fileID: 114824106744707546}
+  - component: {fileID: 114531134002791990}
+  - component: {fileID: 114774080914550016}
   m_Layer: 8
   m_Name: Augarino
   m_TagString: Untagged
@@ -1212,6 +1214,49 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114531134002791990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1371441941724300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 253
+    i1: 25
+    i2: 72
+    i3: 189
+    i4: 0
+    i5: 195
+    i6: 134
+    i7: 196
+    i8: 89
+    i9: 111
+    i10: 236
+    i11: 48
+    i12: 152
+    i13: 154
+    i14: 152
+    i15: 53
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114774080914550016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1371441941724300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d01a7591f6f4c42a336f968444b6a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114824106744707546
 MonoBehaviour:
   m_ObjectHideFlags: 1
