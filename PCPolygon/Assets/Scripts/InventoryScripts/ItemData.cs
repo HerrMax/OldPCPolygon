@@ -24,15 +24,7 @@ public class ItemData : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         {
             offset = eventData.position - new Vector2(transform.position.x, transform.position.y);
 
-
-
-
-
-
-
-
-
-
+            
             transform.SetParent(transform.parent.parent);
             transform.position = eventData.position - offset;
             GetComponent<CanvasGroup>().blocksRaycasts = false;
